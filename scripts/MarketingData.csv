@@ -1,0 +1,6 @@
+"MarketingOption","Name","Code","Type","Discount","Total","date_start","date_end","uses_total","uses_coustomer","status"
+,"Happy New Year","gym123","Percentage","10","99","2022-12-01","2022-01-31","2","2","Enabled"
+,"Happy Dipavali","deepjalao","Fixed Amount","100","500","2022-05-12","2022-12-01","12","12","Enabled"
+
+"AddMarketing","Name","Description","Code","Example1","Example2"
+,"Hey bro","show open cart uses","62b41b547af38","http://192.168.1.8/opencart/?tracking=62b41b547af38","http://192.168.1.8/opencart/index.php?route=common/home&amp;tracking=62b41b547af38"
