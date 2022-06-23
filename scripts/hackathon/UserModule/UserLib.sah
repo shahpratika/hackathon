@@ -85,7 +85,9 @@ function VerifyTax($Country, $State, $PostCode, $Currency, $TaxType) {
 	_click(_submit("/Currency/"));
 	_click(_button($Currency));
 	_click(_link("Estimate Shipping & Taxes"));
+	_wait(90000, _isVisible(_select("country_id")));
 	_setSelected(_select("country_id"), $Country);
+	_wait(90000, _isVisible(_select("zone_id")));
 	_setSelected(_select("zone_id"), $State);
 	_setValue(_textbox("postcode"), $PostCode);
 	_click(_button("Get Quotes"));
@@ -114,37 +116,29 @@ RC - Recurring Customer
 * @param $Confirm - 
 */
 function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $City, $CountryId1, $ZoneId1, $PostCode,$Email1, $Telephone, $Username,$Password1, $Confirm) {
-//	_click(_link("Checkout", _in(_div("Checkout"))));
-	if($CheckoutAs=="Register Account"){
-		_click(_radio("Register Account"));
-		_click(_button("Continue"));
-		_setValue(_textbox("email[1]"), $Email1+new Date().getTime()+"@gmail.com");
-		_setValue(_textbox("telephone"), $Telephone);
-		_setPassword(_password("password[1]"), $Password1);
-		_setPassword(_password("confirm"), $Confirm);
-		_check(_checkbox("agree"));
-	}
-	if($CheckoutAs=="Returning Customer"){
-		_setValue(_textbox("email"), $Username);
-		_setPassword(_password("password"), $Password1);
-		_click(_button("Login"));
-	}
-	if($CheckoutAs=="Guest Checkout"){
-		_click(_radio("Guest Checkout"));
-		_click(_button("Continue"));
-		_setValue(_textbox("email[1]"), $Email1+new Date().getTime()+"@gmail.com");
-		_setValue(_textbox("telephone"), $Telephone);
-	}
+	_setStrictVisibilityCheck(true);
+	_click(_link("Checkout", _in(_div("Checkout"))));
+	_check(_radio("Guest Checkout"));
+	_click(_button("Continue"));
 	_setValue(_textbox("firstname"), $Firstname);
 	_setValue(_textbox("lastname"), $Lastname);
+	var $email = $Email1+new Date().getTime()+"@gmail.com";
+	_setValue(_textbox("email[1]"), $email);
 	_setValue(_textbox("address_1"), $Address1);
 	_setValue(_textbox("address_2"), $Address2);
+	_setValue(_textbox("telephone"), $Telephone);
 	_setValue(_textbox("city"), $City);
+	_setValue(_textbox("postcode"), $PostCode);
 	_setSelected(_select("country_id"), $CountryId1);
 	_setSelected(_select("zone_id"), $ZoneId1);
-	_setValue(_textbox("postcode"), $PostCode);
-//	_call(_button("Continue").click());
-	_log("this alert" +_lastAlert(true));
-	_wait(2000);
-	
+	_setStrictVisibilityCheck(true);
+	_click(_button("Continue"));
+	_click(_button("Continue"));
+	_click(_checkbox("agree"));
+	_click(_button("Continue"));
+	_click(_button("Confirm Order"));
+	_click(_button("Confirm Order"));
+	_assertVisible(_heading1("Your order has been placed!"));
+	_assertEqual("Your order has been placed!", _getText(_heading1("Your order has been placed!")));
+	_setStrictVisibilityCheck(false);
 }
