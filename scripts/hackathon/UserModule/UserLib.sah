@@ -144,3 +144,22 @@ function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $Cit
 	_setStrictVisibilityCheck(false);
 	_setSpeed(100);
 }
+
+
+function NavigateToUser($UserURL){
+	_navigateTo($UserURL);
+
+}
+
+
+function ApplyCouponCode($Code){
+	_click(_link("Use Coupon Code"));
+	_setValue(_textbox("coupon"), $Code);
+	_click(_button("Apply Coupon"));
+}
+
+
+function UserLogin($username, $password){
+	
+	
+}
