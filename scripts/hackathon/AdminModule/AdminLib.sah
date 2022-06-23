@@ -12,8 +12,11 @@ function NavigateToAdmin($AdminURL){
 }
 
 
+function NavigateCustomer(){
+_click(_link("/View more/", _near(_div("/Total Customers/"))));	
+}
 function DeleteRegisteredUser($Email){
-	_click(_link("/View more/", _near(_div("/Total Customers/"))));
+	_assertVisible(_cell($Email));
 	_check(_checkbox("/selected/", _near(_cell($Email))));
 	_expectConfirm("Are you Sure?", true);
 	_click(_button("btn btn-danger"));
