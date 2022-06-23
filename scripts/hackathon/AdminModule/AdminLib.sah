@@ -6,3 +6,7 @@ function AdminLogin($UserName, $Password){
 	_setPassword($_PASSWORD_PASSWORD, $Password);
 	_click($_SUBMIT_LOGIN);
 }
+
+function NavigateToAdmin($AdminURL){
+_navigateTo($AdminURL)	
+}

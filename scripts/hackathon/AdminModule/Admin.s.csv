@@ -1,5 +1,5 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
-,,"loadSahi","../AdminLib.sah"
+,,"loadSahi","AdminLib.sah"
 
 "My First Testcase",,"[Documentation]","My testcase description. Modify as needed"
-,"[../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="
+,"[AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="

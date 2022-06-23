@@ -8,8 +8,9 @@
 ,,"Go To Register"
 ,,"Add Personal Details","Firstname:TestUser","Lastname:Test","Email:""test@test.com""","Telephone:1111111111","Password:NQkaFxZBAQdQJQA=","Confirm:NQkaFxZBAQdQJQA="
 ,,"Verify Success Message","Message:Your Account Has Been Created!"
+,,"User Logout"
 ,,"[End]"
-,,"Logout"
+
 
 ,"[../AdminModule/AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="
 ,"[UserData.csv:RegisterUser]","Delete RegisteredUser","Email:"

@@ -3,6 +3,7 @@
 * GoToRegister
 */
 function GoToRegister() {
+	_windowAction("maximize");
 	_click(_span("My Account"));
 	_click(_link("Register"));
 }
@@ -33,4 +34,10 @@ function AddPersonalDetails($Firstname, $Lastname, $Email, $Telephone, $Password
 function VerifySuccessMessage($Message) {
 	_assertVisible(_heading1(0));
 	_assertEqual($Message, _getText(_heading1(0)));
+}
+
+function UserLogout(){
+_click(_span("My Account"));
+	_click(_link("Logout"));	
+	_assertVisible(_heading1("Account Logout"));
 }
