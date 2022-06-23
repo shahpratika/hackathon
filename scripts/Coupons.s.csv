@@ -1,0 +1,6 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","hackathon/AdminModule/AdminLib.sah"
+
+"TC_01","[Documentation]","My testcase description. Modify as needed"
+,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
+,"Add Coupons"
