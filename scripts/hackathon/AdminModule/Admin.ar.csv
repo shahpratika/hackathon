@@ -1,4 +1,4 @@
-"Key","English","Value"
-"$_TEXTBOX_USERNAME",,"_textbox(""username"")"
-"$_PASSWORD_PASSWORD",,"_password(""password"")"
-"$_SUBMIT_LOGIN",,"_submit(""Login"")"
+"Key","Value"
+"$_TEXTBOX_USERNAME","_textbox(""username"")"
+"$_PASSWORD_PASSWORD","_password(""password"")"
+"$_SUBMIT_LOGIN","_submit(""Login"")"
