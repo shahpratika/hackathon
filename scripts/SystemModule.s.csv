@@ -1,0 +1,19 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","SystemLib.sah"
+,,"loadSahi","hackathon/AdminModule/AdminLib.sah"
+
+"Add Currency",,"[Documentation]","Here we add new currency"
+,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
+,"[SystemData.csv:CurrencyData]","CreateCurrency","Currency Title:""Indian Rupees""","Code:""INR""","Symbol:₹","Decimal:2","Value:""1.00000""","Status:""Enabled""","Success Message:""/Success: You have modified currencies!/"""
+
+"Add TaxRate",,"[Documentation]","Testcase Description"
+,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
+,"[SystemData.csv:TaxData]","[Repeat]"
+,,"Create Geo Zone","Geo Zone:""India Shipping""","Description:""India Shipping Zone""","Success Message:""/Success: You have modified geo zones!/"" [col:GeoZone SuccessMessage]"
+,,"CreateTaxRate","Tax Name:""GST""","Tax Rate:18","Type:""Percentage""","Geo Zone:""India Shipping""","Success Message:""/Success: You have modified tax rates!/"" [col:TaxRate Success Message]"
+,,"Choose Tax Class","Tax Name:""GST""","Priority No:1","Success Message:""/Success: You have modified tax classes!/"" [col:TaxClassSuccess Message]"
+,,"[End]"
+
+"Order Returns Config",,"[Documentation]","Testcase Description"
+,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
+,"[SystemData.csv:ReturnReason]","Add Return Reason","Return Reason Name:""No longer needed""","Success Message:""/Success: You have modified return reasons!/"""

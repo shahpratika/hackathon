@@ -1,0 +1,134 @@
+/**
+* CreateCurrency
+* @param $CurrencyTitleTitle - 
+* @param $CodeCode - 
+* @param $Symbol - 
+* @param $ValueValue - 
+* @param $StatusStatus - 
+*/
+function CreateCurrency($CurrencyTitle, $Code, $Symbol,$Decimal, $Value, $Status, $SuccessMessage) {
+	_click(_link("System"));
+	_click(_link("Localisation"));
+	_click(_link("Currencies"));
+	var $CurrencyPresent=_isVisible(_cell("Indian Rupees", _in(_table("/table-bordered/"))));
+	if($CurrencyPresent) {
+		_log("Currency iis already present");
+	}
+	else {
+		_click(_link("/primary/", _rightOf(_link("/warning/"))));
+		_setValue(_textbox("title", _rightOf(_label("Currency Title"))), $CurrencyTitle);
+		_setValue(_textbox("code", _rightOf(_label("Code"))), $Code);
+		_setValue(_textbox("/symbol/", _rightOf(_label("Symbol Left"))), $Symbol);
+		_setValue(_textbox("/decimal/", _rightOf(_label("Decimal Places"))), $Decimal);
+		_setValue(_textbox("value", _rightOf(_label("Value"))), $Value);
+		_setSelected (_select("status", _rightOf(_label("Status"))),$Status);
+		_click(_submit("/primary/", _leftOf(_link("/default/"))));
+		_assertVisible(_div($SuccessMessage));
+	}
+}
+
+/**
+ * CreateGeoZone($GeoZoneName, $Description, $SuccessYouHaveModifiedGeoZones)
+ * @param $GeoZoneName - 
+ * @param  $Description - 
+ * @param  $SuccessYouHaveModifiedGeoZones - 
+ */
+function CreateGeoZone($GeoZone, $Description, $SuccessMessage){
+	_click(_link("System"));
+	_click(_link("Localisation"));
+	_click(_link("Geo Zones"));
+	var $GeoZonePresent=_isVisible(_cell("India Shipping", _in(_table("/table-bordered/"))));
+	if($GeoZonePresent) {
+		_log("GeoZone is already present");
+	}
+	else{
+		_click(_link("/primary/", _leftOf(_button("/danger/"))));
+		_setValue(_textbox("name", _rightOf(_label("Geo Zone Name"))), $GeoZone);
+		_setValue(_textbox("description"),$Description );
+		_click(_submit("/primary/", _leftOf(_link("/default/"))));
+		_assertVisible(_div($SuccessMessage));
+	}
+}
+
+/**
+ * CreateTaxRate($TaxNameName, $TaxRateRate, $Type, $GeoZoneId, $SuccessYouHaveModifiedTaxRates)
+ * @param $TaxNameName - 
+ * @param  $TaxRateRate - 
+ * @param  $Type - 
+ * @param  $GeoZoneId - 
+ * @param  $SuccessYouHaveModifiedTaxRates - 
+ */
+function CreateTaxRate($TaxName, $TaxRate, $Type, $GeoZone, $SuccessMessage){
+	_click(_link("Taxes"));
+	_click(_link("Tax Rates", _under(_link("Taxes"))));
+
+	var $TaxRatePresent=_isVisible(_cell("GST", _in(_table("/table-bordered/"))));
+	if($TaxRatePresent) {
+		_log("TaxRate is already present");
+	}
+	else{
+		_click(_link("/primary/", _leftOf(_button("/danger/"))));
+		_setValue(_textbox("name", _rightOf(_label("Tax Name"))), $TaxName);
+		_setValue(_textbox("rate", _rightOf(_label("Tax Rate"))), $TaxRate);
+		_assertEqual($Type, _getSelectedText(_select("type")));
+		_isChecked (_checkbox("/customer_group/"));
+		_assertEqual($GeoZone, _getSelectedText(_select("geo_zone_id")));
+		_click(_submit("/primary/", _leftOf(_link("/default/"))));
+		_assertVisible(_div($SuccessMessage));
+	}
+}
+
+/**
+ * ChooseTaxClass($Gst, $X1, $SuccessYouHaveModifiedTaxClasses)
+ * @param $Gst - 
+ * @param  $X1 - 
+ * @param  $SuccessYouHaveModifiedTaxClasses - 
+ */
+function ChooseTaxClass($TaxName, $PriorityNo, $SuccessMessage) {
+	_click(_link("Tax Classes", _under(_link("Taxes"))));
+	_click(_link("/primary/", _rightOf(_cell("Taxable Goods"))));
+	var $SelectBox = _collect("_select","/tax_rate_id/");
+	var $Options =[];
+	for(var $i=0; $i<$SelectBox.length; $i++){
+		$Options.push(_getSelectedText($SelectBox[$i]));
+	}
+	if($Options.indexOf($TaxName)!=-1) {
+		_log("TaxClass is already choosen");
+
+	}
+	else {
+		_click(_button("/primary/"));
+		var $SelectBox =_collect("_select","/tax_rate_id/");
+		_setSelected($SelectBox[$SelectBox.length-1],$TaxName);
+		var $PriorityBox =_collect("_textbox","/priority/");
+		_setValue($PriorityBox[$PriorityBox.length-1],$PriorityNo);
+		_click(_submit("/primary/", _leftOf(_link("/default/"))));
+		_assertVisible(_div($SuccessMessage));
+	}
+}
+
+/**
+ * AddReturnReason($ReturnReasonName,$SuccessMessage)
+ * @param $ReturnReasonName - 
+ * @param  $SuccessMessage - 
+ */
+function AddReturnReason($ReturnReasonName,$SuccessMessage) {
+	_click(_link("System"));
+	_click(_link("Localisation"));
+	_click(_link("Returns", _under(_link("Order Statuses"))));
+	_click(_link("Return Reasons", _near(_link("/Returns/"))));
+	var $ReasonPresent=_isVisible(_cell($ReturnReasonName));
+	if($ReasonPresent) {
+		_log("Reason is already present");
+	}
+	else{
+		_click(_link("/primary/", _leftOf(_button("/danger/"))));
+		_setValue(_textbox("Return Reason Name"),$ReturnReasonName);
+		_click(_submit("/primary/", _near(_link("/default/"))));
+		_assertVisible(_div($SuccessMessage));
+	}
+}
+
+
+
+
