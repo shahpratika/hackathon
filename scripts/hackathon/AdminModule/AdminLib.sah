@@ -2,7 +2,7 @@ _includeAR("Admin.ar.csv", "Value");
 _includeAR("Admin.ar.csv");
 
 function AdminLogin($UserName, $Password){
-	_setValue($_TEXTBOX_USERNAME, "admin");
-	_setPassword($_PASSWORD_PASSWORD, "LhwMDQZBGxo=");
+	_setValue($_TEXTBOX_USERNAME, $UserName);
+	_setPassword($_PASSWORD_PASSWORD, $Password);
 	_click($_SUBMIT_LOGIN);
 }
