@@ -158,4 +158,11 @@ function ApplyCouponCode($Code){
 	_click(_button("Apply Coupon"));
 }
 
-
+function UserLogin($Username, $Password){
+	_click(_span("caret"));
+	_setValue(_textbox("email"), $Username);
+	_setPassword(_password("password"), $Password);
+	_click(_submit("Login"));
+	_assertVisible(_heading2("My Account"));
+	
+}
