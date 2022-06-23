@@ -1,8 +1,19 @@
-"TestCase","Key Word","Argument 1","Argument 2"
-,"loadSahi","ProductsLib.sah"
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","../../AdminLib.sah"
+,,"loadSahi","ProductsLib.sah"
 
 
-"Go To Products","[Documentation]","Go To Products"
-,"Go To Products"
+"Go To Products",,"[Documentation]","Go To Products"
+,,"Go To Products"
 
-"Add Products","[Documentation]","Adding Producst"
+"Add Products",,"[Documentation]","Adding Producst"
+,,"Add New"
+,"[ProductsData.csv:ProductsData]","[Repeat]"
+,,"Add General Details","Product Name:iPhone 13","Description:A revolutionary device that brings most premium mobile features to your fingertips.","Meta Tag Title:iPhone 13","Meta Tag Description:The iPhone is available. Purchase most desired phone now.","Meta Tag Keywords:Apple iPhone, iPhone, iPhone Price, iPhone for Sales, iPhone Deals","Product Tags:iPhone, iPhone 13, Apple, Smartphone, iOS"
+,,"Add Data Details","Model:iPhone 13","Price:149000","Tax Class:Taxable Goods","Quantity:50","Minimum Quantity:1","Subtract Stock:Yes","Out Of Stock Status:In Stock","Requires Shipping:Yes","Is Enabled:true","No Of Sort Order:0"
+,,"[End]"
+
+
+
+
+,,"Save"

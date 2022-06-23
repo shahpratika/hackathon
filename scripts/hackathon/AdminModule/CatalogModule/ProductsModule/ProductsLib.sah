@@ -4,7 +4,85 @@ function GoToProducts(){
 
 function AddGeneralDetails($ProductName, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords, $ProductTags){
 	_setValue(_textbox("Product Name"), $ProductName);
-	_setValue(_textbox("Product Name"), $ProductName);
-	_setValue(_textbox("Product Name"), $MetaTagTitle);
+	_setValue(_div("note-editable"), $Description);
+	_setValue(_textbox("Meta Tag Title"), $MetaTagTitle);
+	_setValue(_textarea("Meta Tag Description"), $MetaTagDescription);
+	_setValue(_textarea("Meta Tag Keywords"), $MetaTagKeywords);
+	_setValue(_textbox("Product Tags"), $ProductTags);
+}
 
+function AddDataDetails($Model, $SKU, $UPC, $EAN, $JAN, $ISBN, $MPN, $Location, $Price, $TaxClass, $Quantity, $MinimumQuantity, 
+			$SubtractStock, $OutOfStockStatus, $RequiresShipping, $DateAvailable, $Dimensions, $LengthClass, $Weight, 
+			$WeightClass, $IsEnabled, $NoOfSortOrder){
+	_click(_link("Data"));
+	if($Model){
+		_setValue(_textbox("Model"), $Model);
+	}
+	if($SKU){
+		_setValue(_textbox("SKU"), $SKU);
+	}
+	if($UPC){
+		_setValue(_textbox("UPC"), "vb");
+	}
+	if($EAN){
+		_setValue(_textbox("EAN"), "bf");
+	}
+	if($JAN){
+		_setValue(_textbox("JAN"), "fgbf");
+	}
+	if($ISBN){
+		_setValue(_textbox("ISBN"), "cfgbh");
+	}
+	if($MPN){
+		_setValue(_textbox("MPN"), "cb");
+	}
+	if($Location){
+		_setValue(_textbox("Location"), "fcgb");
+	}
+	if($Price){
+		_setValue(_textbox("Price"), "cv");
+	}
+	if($TaxClass){
+		_setSelected(_select("input-tax-class"), $TaxClass);
+	}
+	if($Quantity){
+		_setValue(_textbox("Quantity"), $Quantity);
+	}	
+	if($MinimumQuantity){
+		_setValue(_textbox("Minimum Quantity"), $MinimumQuantity);
+	}	
+	if($SubtractStock){
+		_setSelected(_select("subtract"), $SubtractStock);
+	}	
+	if($OutOfStockStatus){
+		_setSelected(_select("stock_status_id"), $OutOfStockStatus);
+	}
+	if($RequiresShipping){
+		_check(_radio($RequiresShipping));
+	}
+	if($DateAvailable){
+		_setValue(_textbox("Date Available"),$DateAvailable);
+	}
+//	if($Dimensions){
+		if($Dimensions && $Dimensions.length >0){
+			$Dimensions = JSON.parse($Dimensions);
+			for(var $i = 0; $i < 3; $i++){
+				if($Dimensions) _setValue(_textbox("Length"), $Dimensions[$i]);
+			}
+		}
+	if($LengthClass){
+		_setSelected(_select("length_class_id"), $LengthClass);
+	}
+	if($Weight){
+		_setValue(_textbox("Weight"), "sdfgv");
+	}
+	if($WeightClass){
+		_setSelected(_select("weight_class_id"), $WeightClass);
+	}	
+	if($NoOfSortOrder > 0){
+		_setValue(_textbox("Sort Order"), $NoOfSortOrder);
+	}
+	if(!$IsEnabled){
+		_setSelected(_select("status"), "Disabled");
+	}
 }

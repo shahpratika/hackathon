@@ -1,0 +1,12 @@
+function AddSEODetails($Keyword){
+	_click(_link("SEO"));
+	_setValue(_textbox("Keyword"), $Keyword);
+}
+
+
+function AddDesignDetails($Layout){
+	_click(_link("Design", _in(_div("panel panel-default"))));
+	if(_exists(_option($Layout))){
+		_setSelected(_select("form-control"), $Layout);
+	}	
+}
