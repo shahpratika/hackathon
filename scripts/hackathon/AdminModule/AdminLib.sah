@@ -8,5 +8,20 @@ function AdminLogin($UserName, $Password){
 }
 
 function NavigateToAdmin($AdminURL){
-_navigateTo($AdminURL)	
+	_navigateTo($AdminURL)	
+}
+
+
+function DeleteRegisteredUser($Email){
+	_click(_link("/View more/", _near(_div("/Total Customers/"))));
+	_check(_checkbox("/selected/", _near(_cell($Email))));
+	_expectConfirm("Are you Sure?", true);
+	_click(_button("btn btn-danger"));
+	_click(_button("btn btn-danger"));
+}
+
+
+function AdminLogout(){
+
+	_click(_span("Logout"));
 }

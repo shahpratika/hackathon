@@ -11,6 +11,7 @@
 ,,"User Logout"
 ,,"[End]"
 
-
+,"[../AdminModule/AdminData.csv:AdminURL]","Navigate To Admin","Admin URL:http://support/opencart/admin"
 ,"[../AdminModule/AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="
-,"[UserData.csv:RegisterUser]","Delete RegisteredUser","Email:"
+
+,"[UserData.csv:RegisterUser]","Delete RegisteredUser","Email:""test@test.com"""
