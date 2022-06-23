@@ -1,0 +1,36 @@
+
+/**
+* GoToRegister
+*/
+function GoToRegister() {
+	_click(_span("My Account"));
+	_click(_link("Register"));
+}
+/**
+* AddPersonalDetails
+* @param $Firstname - 
+* @param $Lastname - 
+* @param $Email - 
+* @param $Telephone - 
+* @param $Password - 
+* @param $Confirm - 
+*/
+function AddPersonalDetails($Firstname, $Lastname, $Email, $Telephone, $Password, $Confirm) {
+	_setValue(_textbox("firstname"), $Firstname);
+	_setValue(_textbox("lastname"), $Lastname);
+	_setValue(_emailbox("email"), $Email);
+	_setValue(_telephonebox("telephone"), $Telephone);
+	_setPassword(_password("password"), $Password);
+	_setPassword(_password("confirm"), $Confirm);
+	_check(_radio("newsletter[1]"));
+	_check(_checkbox("agree"));
+	_click(_submit("Continue"));
+}
+/**
+* VerifySuccessMessage
+* @param $Message - 
+*/
+function VerifySuccessMessage($Message) {
+	_assertVisible(_heading1(0));
+	_assertEqual($Message, _getText(_heading1(0)));
+}

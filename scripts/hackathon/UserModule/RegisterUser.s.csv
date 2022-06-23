@@ -1,0 +1,15 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","../AdminModule/AdminLib.sah"
+,,"loadSahi","UserLib.sah"
+
+"Register User",,"[Documentation]","Register the user"
+
+,"[UserData.csv:RegisterUser]","[Repeat]"
+,,"Go To Register"
+,,"Add Personal Details","Firstname:TestUser","Lastname:Test","Email:""test@test.com""","Telephone:1111111111","Password:NQkaFxZBAQdQJQA=","Confirm:NQkaFxZBAQdQJQA="
+,,"Verify Success Message","Message:Your Account Has Been Created!"
+,,"[End]"
+,,"Logout"
+
+,"[../AdminModule/AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="
+,"[UserData.csv:RegisterUser]","Delete RegisteredUser","Email:"
