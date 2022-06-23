@@ -2,4 +2,4 @@
 ,,"loadSahi","../AdminLib.sah"
 
 "My First Testcase",,"[Documentation]","My testcase description. Modify as needed"
-,"[AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="
+,"[../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:LhwMDQZBGxo="

@@ -1,9 +1,0 @@
-_includeAR("User.ar.csv");
-
-
-function UserLogin(){
-	
-	
-	
-	
-}
