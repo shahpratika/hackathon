@@ -6,7 +6,7 @@
 * @param $Discount - 
 * @param $Total - 
 */
-function AddCoupons($Name, $Code,$Type, $Discount, $Total ,$date_start,$date_end,$uses_total,$uses_coustomer,$status) {
+function CreateCoupon($Name, $Code,$Type, $Discount, $Total ,$date_start,$date_end,$uses_total,$uses_coustomer,$status) {
 	_click(_link("Marketing"));
 	_click(_link("Coupons"));
 	if(_isVisible(_cell($Code)) && _isVisible(_cell($Name))){

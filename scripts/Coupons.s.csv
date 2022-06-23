@@ -4,6 +4,5 @@
 
 "TC_01",,"[Documentation]","My testcase description. Modify as needed"
 ,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
-,"[MarketingData.csv:MarketingOption]","Add Coupons","Name:Happy New Year","Code:gym33","Type: Percentage","Discount:10","Total:99","date_start:2022-12-01","date_end:2023-01-31","uses_total:1","uses_coustomer:1","status:Enabled"
+,"[MarketingData.csv:MarketingOption]","Create Coupon","Name:Happy New Year","Code:gym33","Type: Percentage","Discount:10","Total:99","date_start:2022-12-01","date_end:2023-01-31","uses_total:1","uses_coustomer:1","status:Enabled"
 ,,"LogOut"
-"TC_02"
