@@ -37,7 +37,114 @@ function VerifySuccessMessage($Message) {
 }
 
 function UserLogout(){
-_click(_span("My Account"));
-	_click(_link("Logout"));	
+	_click(_span("My Account"));
+	_click(_link("Logout"));
 	_assertVisible(_heading1("Account Logout"));
+}
+/**
+* SearchProduct
+* @param $ProductName - 
+*/
+function SearchProduct($ProductName) {
+	_setValue(_textbox("search"), $ProductName);
+	_click(_italic("fa fa-search"));
+	_click(_button("grid-view"));
+}
+/**
+* AddToCart
+*/
+function AddToCart() {
+	var $CartButtons = _collect("_button","/Add to Cart/");
+	_click($CartButtons[_random($CartButtons.length-1)])
+}
+/**
+* ViewCart
+*/
+function ViewCart() {
+	_click(_span("cart-total"));
+	_click(_link("View Cart"));
+}
+/**
+* AddCoupon
+* @param $CouponCode - 
+*/
+function AddCoupon($CouponCode) {
+	_click(_link("Use Coupon Code"));
+	_setValue(_textbox("coupon"), $CouponCode);
+	_click(_button("Apply Coupon"));
+}
+/**
+* VerifyTax
+* @param $Country - 
+* @param $State - 
+* @param $PostCode - 
+* @param $Currency - 
+* @param $TaxType - 
+*/
+function VerifyTax($Country, $State, $PostCode, $Currency, $TaxType) {
+	_click(_submit("/Currency/"));
+	_click(_button($Currency));
+	_click(_link("Estimate Shipping & Taxes"));
+	_setSelected(_select("country_id"), $Country);
+	_setSelected(_select("zone_id"), $State);
+	_setValue(_textbox("postcode"), $PostCode);
+	_click(_button("Get Quotes"));
+	_click(_radio("shipping_method"));
+	_click(_button("Apply Shipping"));
+	_setStrictVisibilityCheck(true);
+	_assertVisible(_strong("/"+$TaxType+"/"));
+	_setStrictVisibilityCheck(false);
+}
+/**
+* Checkout
+* @param $CheckoutAs - G,RA, RC
+G - Guest
+RA - Register Account
+RC - Recurring Customer
+* @param $Firstname - 
+* @param $Lastname - 
+* @param $Address1 - 
+* @param $Address2 - 
+* @param $City - 
+* @param $CountryId1 - 
+* @param $ZoneId1 - 
+* @param $Email1 - 
+* @param $Telephone - 
+* @param $Password1 - 
+* @param $Confirm - 
+*/
+function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $City, $CountryId1, $ZoneId1, $PostCode,$Email1, $Telephone, $Username,$Password1, $Confirm) {
+//	_click(_link("Checkout", _in(_div("Checkout"))));
+	if($CheckoutAs=="Register Account"){
+		_click(_radio("Register Account"));
+		_click(_button("Continue"));
+		_setValue(_textbox("email[1]"), $Email1+new Date().getTime()+"@gmail.com");
+		_setValue(_textbox("telephone"), $Telephone);
+		_setPassword(_password("password[1]"), $Password1);
+		_setPassword(_password("confirm"), $Confirm);
+		_check(_checkbox("agree"));
+	}
+	if($CheckoutAs=="Returning Customer"){
+		_setValue(_textbox("email"), $Username);
+		_setPassword(_password("password"), $Password1);
+		_click(_button("Login"));
+	}
+	if($CheckoutAs=="Guest Checkout"){
+		_click(_radio("Guest Checkout"));
+		_click(_button("Continue"));
+		_setValue(_textbox("email[1]"), $Email1+new Date().getTime()+"@gmail.com");
+		_setValue(_textbox("telephone"), $Telephone);
+	}
+	_setValue(_textbox("firstname"), $Firstname);
+	_setValue(_textbox("lastname"), $Lastname);
+	_setValue(_textbox("address_1"), $Address1);
+	_setValue(_textbox("address_2"), $Address2);
+	_setValue(_textbox("city"), $City);
+	_setSelected(_select("country_id"), $CountryId1);
+	_setSelected(_select("zone_id"), $ZoneId1);
+	_setValue(_textbox("postcode"), $PostCode);
+//	_call(_button("Continue").click());
+	_log("this alert" +_lastAlert(true));
+	_wait(2000);
+	
 }

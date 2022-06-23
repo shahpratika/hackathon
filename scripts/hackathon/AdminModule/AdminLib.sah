@@ -22,7 +22,7 @@ function NavigateToAdmin($AdminURL){
 
 
 function NavigateCustomer(){
-_click(_link("/View more/", _near(_div("/Total Customers/"))));	
+	_click(_link("/View more/", _near(_div("/Total Customers/"))));
 }
 function DeleteRegisteredUser($Email){
 	_assertVisible(_cell($Email));
