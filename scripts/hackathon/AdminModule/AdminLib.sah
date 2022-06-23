@@ -47,8 +47,13 @@ function AdminLogout(){
 function ShipOrder($FirstName){
 	_click(_link("Sales"));
 	_click(_link("Orders"));
-	_check(_italic("fa fa-eye", _near(_cell("/"+$FirstName+"/"))));
+	_click(_italic("fa fa-eye", _near(_cell("/"+$FirstName+"/"))));
 	_setSelected(_select("order_status_id"), "Shipped");
 	_click(_submit("Add History"));
+	_assertVisible(_div("Success: You have modified orders! ×"));
+	_click(_link("Orders"));
+	_check(_checkbox(0, _near(_cell("/"+$FirstName+"/"))));
+	_click(_button(0, _near(_cell("/"+$FirstName+"/"))));
+	_click(_link("Delete"));
 	_assertVisible(_div("Success: You have modified orders! ×"));
 }

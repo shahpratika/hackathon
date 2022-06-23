@@ -117,13 +117,14 @@ RC - Recurring Customer
 */
 function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $City, $CountryId1, $ZoneId1, $PostCode,$Email1, $Telephone, $Username,$Password1, $Confirm) {
 	_setStrictVisibilityCheck(true);
+	_setSpeed(1000);
 	_click(_link("Checkout", _in(_div("Checkout"))));
 	_check(_radio("Guest Checkout"));
 	_click(_button("Continue"));
 	_setValue(_textbox("firstname"), $Firstname);
 	_setValue(_textbox("lastname"), $Lastname);
 	var $email = $Email1+new Date().getTime()+"@gmail.com";
-	_setValue(_textbox("email[1]"), $email);
+	_setValue(_textbox("email"), $email);
 	_setValue(_textbox("address_1"), $Address1);
 	_setValue(_textbox("address_2"), $Address2);
 	_setValue(_textbox("telephone"), $Telephone);
@@ -141,4 +142,5 @@ function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $Cit
 	_assertVisible(_heading1("Your order has been placed!"));
 	_assertEqual("Your order has been placed!", _getText(_heading1("Your order has been placed!")));
 	_setStrictVisibilityCheck(false);
+	_setSpeed(100);
 }
