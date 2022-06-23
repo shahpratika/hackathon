@@ -1,0 +1,16 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","../../AdminLib.sah"
+,,"loadSahi","FiltersLib.sah"
+
+"Go To Filters Page",,"[Documentation]"
+,,"Go To Filters"
+
+"Create Filters",,"[Documentation]","Creating Filters"
+,,"Add New"
+
+,"[FiltersData.csv:GroupData]","Fill Group Details","Name:Computer Components","No Of Sort Order:0"
+,"[FiltersData.csv:FiltersData]","[Repeat]"
+,,"Add New Button"
+,,"Fill Filter Details","Name:MotherBoard","No Of Sort Order:0"
+,,"[End]"
+,,"Save"

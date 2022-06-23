@@ -1,0 +1,87 @@
+
+
+function GoToCategories(){
+	_click(_link("Categories"));
+}
+
+/**
+* AddCategory
+*/
+function AddGeneralDetails($CategoryName, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords){
+	_setValue(_textbox("Category Name"), $CategoryName);
+	_setValue(_div("note-editable"), $Description);
+	_setValue(_textbox("Meta Tag Title"), $MetaTagTitle);
+	_setValue(_textarea("Meta Tag Description"), $MetaTagDescription);
+	_setValue(_textarea("Meta Tag Keywords"), $MetaTagKeywords);
+}
+
+function AddDataDetails($Parent, $Filters, $IsDefault, $ImagePath, $IsOnTop, $NoOfColumns, $NoOfSortOrder, $IsEnabled){
+	_click(_link("Data"));
+	_call(_sahi.blurEnabled = false);
+	if($Parent){
+			_setValue(_textbox("Parent"), $Parent);
+			if(_exists(_link("/"+$Parent +"/"))){
+				_click(_link("/"+$Parent +"/"));
+			}
+	}
+	if($Filters && $Filters.length >0){
+//		_log()
+		$Filters = JSON.parse($Filters);
+		for(var $i = 0; $i < $Filters.length; $i++){
+			var $FilterValue = $Filters[$i];
+			var $FilterEl = _link("/"+$FilterValue +"/");
+			_setValue(_textbox("Filters"), $FilterValue);
+			_wait(2000, _isVisible($FilterEl));
+//			_log(_link("/"+$FilterValue +"/"));
+			var $FilterExists = _isVisible($FilterEl);
+			//_log($FilterExists);
+			if($FilterExists){
+				_click($FilterEl);
+			}
+		}
+	}
+	_call(_sahi.blurEnabled = true);
+	if(!$IsDefault){
+		_click(_checkbox("category_store[]"));
+	}
+	if($ImagePath){
+		var $ImageEl = _image(0, _near(_label("Image")));
+		_click($ImageEl);
+		_click(_button("button-image"));
+		_click(_button("button-upload"));
+		if(!_exists(_image(getFileName($ImagePath)))){
+			_setFile3(_file("file[]"), $ImagePath);
+			_check(_checkbox(getFileName($ImagePath)));
+		}
+		_click(_image(getFileName($ImagePath)));
+	}
+	if($IsOnTop){
+		_check(_checkbox("top"));
+	}
+	if($NoOfColumns){
+		_setValue(_textbox("Columns"), $NoOfColumns);
+	}
+	if($NoOfSortOrder > 0){
+		_setValue(_textbox("Sort Order"), $NoOfSortOrder);
+	}
+	if(!$IsEnabled){
+		_setSelected(_select("status"), "Disabled");
+	}
+}
+
+function getFileName($ImagePath){
+	return $ImagePath;
+}
+
+function AddSEODetails($Keyword){
+	_click(_link("SEO"));
+	_setValue(_textbox("Keyword"), $Keyword);
+}
+
+
+function AddDesignDetails($Layout){
+	_click(_link("Design", _in(_div("panel panel-default"))));
+	if(_exists(_option($Layout))){
+		_setSelected(_select("form-control"), $Layout);
+	}	
+}

@@ -1,0 +1,10 @@
+function GoToProducts(){
+	_click(_link("Products"));
+}
+
+function AddGeneralDetails($ProductName, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords, $ProductTags){
+	_setValue(_textbox("Product Name"), $ProductName);
+	_setValue(_textbox("Product Name"), $ProductName);
+	_setValue(_textbox("Product Name"), $MetaTagTitle);
+
+}

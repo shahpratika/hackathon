@@ -1,0 +1,7 @@
+"Key","Value"
+"$_BUTTON_BTNBTNPRIMARY","_button(""btn btn-primary"")"
+"$_TEXTBOX_FILTERNAME_NEAR_BUTTON_BTNBTNPRIMARY","_textbox(""Filter Name"", _near($_BUTTON_BTNBTNPRIMARY))"
+"$_TEXTBOX_SORTORDER_NEAR_BUTTON_BTNBTNPRIMARY","_textbox(""Sort Order"", _near($_BUTTON_BTNBTNPRIMARY))"
+"$_TEXTBOX_FILTERGROUPNAME","_textbox(""Filter Group Name"")"
+"$_TEXTBOX_SORTORDER","_textbox(""Sort Order"")"
+"$_TEXTBOX_FILTERNAME","_textbox(""Filter Name"")"

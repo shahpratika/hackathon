@@ -1,0 +1,28 @@
+_includeAR("Filters.ar.csv", "Value");
+
+function FillFilterDetails($Name, $NoOfSortOrder){
+	var $FiltersLength = _collect("_textbox", "/.*Filter Name.*/", _in(_table("filter"))).length - 1;
+	_startLookInside(_table("filter"));
+	_setValue(_textbox("Filter Name["+($FiltersLength)+"]"), $Name);
+	_setValue(_textbox("Sort Order["+($FiltersLength)+"]"), $NoOfSortOrder);
+	_stopLookInside();
+}
+
+function FillGroupDetails($Name, $NoOfSortOrder){
+	_setValue($_TEXTBOX_FILTERGROUPNAME, $Name);
+	_setValue($_TEXTBOX_SORTORDER, $NoOfSortOrder);
+}
+
+function AddNewButton(){
+	_click(_button("btn btn-primary"));
+}
+
+function GoToFilters(){
+//	if(_isVisible(_link("Filters"))){
+		_click(_link("Filters"));
+//	}else if(_link("Categories")){
+//		
+//	}else{
+//		_log("Not able to go to Filters Page");
+//	}
+}
