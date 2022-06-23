@@ -1,6 +1,15 @@
 _includeAR("Admin.ar.csv", "Value");
 _includeAR("Admin.ar.csv");
 
+function AddNew() {
+	//implement method
+	_click(_link("btn btn-primary"));
+}
+
+function Save(){
+	_click(_italic("fa fa-save"));
+}
+
 function AdminLogin($UserName, $Password){
 	_setValue($_TEXTBOX_USERNAME, $UserName);
 	_setPassword($_PASSWORD_PASSWORD, $Password);
