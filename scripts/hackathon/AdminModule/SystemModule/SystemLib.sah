@@ -10,7 +10,7 @@ function CreateCurrency($CurrencyTitle, $Code, $Symbol,$Decimal, $Value, $Status
 	_click(_link("System"));
 	_click(_link("Localisation"));
 	_click(_link("Currencies"));
-	var $CurrencyPresent=_isVisible(_cell("Indian Rupees", _in(_table("/table-bordered/"))));
+	var $CurrencyPresent=_isVisible(_cell($CurrencyTitle, _in(_table("/table-bordered/"))));
 	if($CurrencyPresent) {
 		_log("Currency iis already present");
 	}
@@ -113,7 +113,7 @@ function ChooseTaxClass($TaxName, $PriorityNo, $SuccessMessage) {
  * @param  $SuccessMessage - 
  */
 function AddReturnReason($ReturnReasonName,$SuccessMessage) {
-	_click(_link("System"));
+//	_click(_link("System"));
 	_click(_link("Localisation"));
 	_click(_link("Returns", _under(_link("Order Statuses"))));
 	_click(_link("Return Reasons", _near(_link("/Returns/"))));
@@ -141,7 +141,7 @@ function AddReturnReason($ReturnReasonName,$SuccessMessage) {
  * @param  $Status - 
  */
 function CreateUser($Username, $UserGroupId, $FirstName, $LastName, $EMail, $Password, $Confirm, $Status, $SuccessMessage){
-	_click(_link("System"));
+//	_click(_link("System"));
 	_click(_link("Users"));
 	_click(_link("/Users/",_under(_link("Users"))));
 	_click(_link("/primary/", _leftOf(_button("/danger/"))));

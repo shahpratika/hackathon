@@ -4,10 +4,11 @@
 
 "Add Currency",,"[Documentation]","Here we add new currency"
 ,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
-,"[SystemData.csv:CurrencyData]","CreateCurrency","Currency Title:""Indian Rupees""","Code:""INR""","Symbol:₹","Decimal:2","Value:""1.00000""","Status:""Enabled""","Success Message:""/Success: You have modified currencies!/"""
+,"[SystemData.csv:CurrencyData]","[Repeat]"
+,,"CreateCurrency","Currency Title:""Indian Rupees""","Code:""INR""","Symbol:₹","Decimal:2","Value:""1.00000""","Status:""Enabled""","Success Message:""/Success: You have modified currencies!/"""
+,,"[End]"
 
 "Add TaxRate",,"[Documentation]","Testcase Description"
-,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
 ,"[SystemData.csv:TaxData]","[Repeat]"
 ,,"Create Geo Zone","Geo Zone:""India Shipping""","Description:""India Shipping Zone""","Success Message:""/Success: You have modified geo zones!/"" [col:GeoZone SuccessMessage]"
 ,,"CreateTaxRate","Tax Name:""GST""","Tax Rate:18","Type:""Percentage""","Geo Zone:""India Shipping""","Success Message:""/Success: You have modified tax rates!/"" [col:TaxRate Success Message]"
@@ -15,9 +16,9 @@
 ,,"[End]"
 
 "Order Returns Config",,"[Documentation]","Testcase Description"
-,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
 ,"[SystemData.csv:ReturnReason]","Add Return Reason","Return Reason Name:""No longer needed""","Success Message:""/Success: You have modified return reasons!/"""
 
 "Create New User",,"[Documentation]","Testcase Description"
-,,"Admin Login","User Name:""admin""","Password:LhwMDQZBGxo="
-,"[SystemData.csv:UserData]","Create User","Username:shahpratika","User Group Id:Administrator","First Name:Pratik","Last Name:Shah","E Mail:shah.pratik123@gmail.com","Password:NQkaFxZBAQdQJQA=","Confirm:NQkaFxZBAQdQJQA=","Status:Enabled","Success Message:/Success: You have modified users!/"
+,"[SystemData.csv:UserData]","[Repeat]"
+,,"Create User","Username:shahpratika","User Group Id:Administrator","First Name:Pratik","Last Name:Shah","E Mail:shah.pratik123@gmail.com","Password:NQkaFxZBAQdQJQA=","Confirm:NQkaFxZBAQdQJQA=","Status:Enabled","Success Message:/Success: You have modified users!/"
+,,"[End]"
