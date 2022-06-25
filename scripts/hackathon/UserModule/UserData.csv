@@ -5,3 +5,6 @@
 "VerifyTax","Country","State","PostCode","Currency","TaxType"
 ,"United Kingdom","Bristol","387001","EUR","VAT"
 ,"India","Karnataka","387001","INR","GST"
+
+"UserData","URL"
+,"http://192.168.0.103/opencart/upload/"

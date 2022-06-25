@@ -1,10 +1,10 @@
 "CurrencyData","Currency Title","Code","Symbol","Decimal","Value","Status","Success Message"
 ,"Indian Rupees","INR","₹","2","1.00000","Enabled","/Success: You have modified currencies!/"
-,"Thai baht","THB","฿","2","1.00000","Enabled","/Success: You have modified currencies!/"
+,"Euro","EUR","€","2","1.00000","Enabled","/Success: You have modified currencies!/"
 
 "TaxData","Geo Zone","Description","GeoZone SuccessMessage","Tax Name","Tax Rate","Type","TaxRate Success Message","Priority No","TaxClassSuccess Message"
 ,"India Shipping","India Shipping Zone","/Success: You have modified geo zones!/","GST","18","Percentage","/Success: You have modified tax rates!/","1","/Success: You have modified tax classes!/"
-
+,"Europe Shipping","Europe Shipping Zone","/Success: You have modified geo zones!/","VAT","23","Percentage","/Success: You have modified tax rates!/","2","/Success: You have modified tax classes!/"
 
 "ReturnReason","Return Reason Name","Success Message"
 ,"No longer needed","/Success: You have modified return reasons!/"

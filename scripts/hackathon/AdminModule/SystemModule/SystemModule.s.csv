@@ -1,9 +1,12 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
 ,,"loadSahi","../AdminLib.sah"
+,,"loadSahi","../AdminLib.sah"
 ,,"loadSahi","SystemLib.sah"
 
 "Add Currency",,"[Documentation]","Here we add new currency"
-,,"AdminLogin","User Name:""admin""","Password:LhwMDQZBGxo="
+,"[../AdminData.csv:AdminData]","Navigate To Admin","AdminURL:"
+,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
+
 ,"[SystemData.csv:CurrencyData]","[Repeat]"
 ,,"CreateCurrency","Currency Title:""Indian Rupees""","Code:""INR""","Symbol:₹","Decimal:2","Value:""1.00000""","Status:""Enabled""","Success Message:""/Success: You have modified currencies!/"""
 ,,"[End]"

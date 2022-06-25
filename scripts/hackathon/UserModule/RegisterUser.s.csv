@@ -2,6 +2,9 @@
 ,,"loadSahi","../AdminModule/AdminLib.sah"
 ,,"loadSahi","UserLib.sah"
 
+"Go To User Page",,"[Documentation]","Go To User Page"
+,"[UserData.csv:UserData]","Go To User Page","URL:"
+
 "Register User",,"[Documentation]","Register the user"
 
 ,"[UserData.csv:RegisterUser]","[Repeat]"

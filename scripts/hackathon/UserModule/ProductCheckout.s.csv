@@ -2,6 +2,10 @@
 ,,"loadSahi","../AdminModule/AdminLib.sah"
 ,,"loadSahi","UserLib.sah"
 ,,"$FirstName=","""TestSahi"""
+
+"Go To User Page",,"[Documentation]","Go To User Page"
+,"[UserData.csv:UserData]","Go To User Page","URL:"
+
 "Regular Checkout",,"[Documentation]","My testcase description. Modify as needed"
 ,,"Search Product","ProductName:iphone"
 ,,"Add To Cart"
