@@ -1,5 +1,6 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
 ,,"loadSahi","../../AdminLib.sah"
+,,"loadSahi","../CatalogLib.sah"
 ,,"loadSahi","FiltersLib.sah"
 
 "Admin Login",,"[Documentation]","Doing Admin Login to manage filters"

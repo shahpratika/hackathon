@@ -1,3 +1,4 @@
+_include("../../AdminLib.sah");
 function GoToProducts(){
 	_click(_link("Products"));
 }
@@ -22,25 +23,25 @@ function AddDataDetails($Model, $SKU, $UPC, $EAN, $JAN, $ISBN, $MPN, $Location, 
 		_setValue(_textbox("SKU"), $SKU);
 	}
 	if($UPC){
-		_setValue(_textbox("UPC"), "vb");
+		_setValue(_textbox("UPC"), $UPC);
 	}
 	if($EAN){
-		_setValue(_textbox("EAN"), "bf");
+		_setValue(_textbox("EAN"), $EAN);
 	}
 	if($JAN){
-		_setValue(_textbox("JAN"), "fgbf");
+		_setValue(_textbox("JAN"), $JAN);
 	}
 	if($ISBN){
-		_setValue(_textbox("ISBN"), "cfgbh");
+		_setValue(_textbox("ISBN"), $ISBN);
 	}
 	if($MPN){
-		_setValue(_textbox("MPN"), "cb");
+		_setValue(_textbox("MPN"), $MPN);
 	}
 	if($Location){
-		_setValue(_textbox("Location"), "fcgb");
+		_setValue(_textbox("Location"), $Location);
 	}
 	if($Price){
-		_setValue(_textbox("Price"), "cv");
+		_setValue(_textbox("Price"), $Price);
 	}
 	if($TaxClass){
 		_setSelected(_select("input-tax-class"), $TaxClass);

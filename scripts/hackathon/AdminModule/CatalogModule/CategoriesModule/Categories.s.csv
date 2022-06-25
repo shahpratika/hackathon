@@ -1,7 +1,7 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","../../AdminLib.sah"
 ,,"loadSahi","../CatalogLib.sah"
 ,,"loadSahi","CategoriesLib.sah"
-,,"loadSahi","../../AdminLib.sah"
 
 "Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
 ,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
@@ -10,15 +10,14 @@
 ,,"Go To Categories"
 
 "Create Categories",,"[Documentation]","Creating Categories"
-,,"Add New"
 ,"[CategoriesData.csv:CategoryData]","[Repeat]"
+,,"Add New"
 ,,"Add General Details","Category Name:""Hardware""","Description:""Motherboards, Processors, RAM etc.""","Meta Tag Title:""Computer Hardware""","Meta Tag Description:""PC Harwdare: Motherboards, Processors, RAM etc.""","Meta Tag Keywords:""Hardware, PC, PC Components, Motherboards, Processors, RAM, GPUs."""
 
 ,,"Add Data Details","Parent:""""","Filters:[Motherboard, CPU, Speed]","Is Default:true","Image Path:""""","Is On Top:true","No Of Columns:1","No Of Sort Order:0","Is Enabled:true"
 ,,"Add SEO Details","Keyword:PC-Hardware"
 ,,"Add Design Details","Layout:"""""
-,,"[End]"
 ,,"Save"
 ,,"Verify Save"
-
-"Verify Category Added",,"[Documentation]","Verify Category Added"
+,,"Verify Row","Category Name:""Hardware"""
+,,"[End]"

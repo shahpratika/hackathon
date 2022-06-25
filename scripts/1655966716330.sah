@@ -1,0 +1,4 @@
+_click(_link(85));
+_doubleClick(_textbox("category_description[1][name]"));
+_setValue(_textbox("category_description[1][name]"), "Hardware");
+_click(_div("note-editable"));

@@ -41,7 +41,7 @@ function AddDataDetails($Parent, $Filters, $IsDefault, $ImagePath, $IsOnTop, $No
 		}
 	}
 	_call(_sahi.blurEnabled = true);
-	if(!$IsDefault){
+	if($IsDefault == false){
 		_click(_checkbox("category_store[]"));
 	}
 	if($ImagePath){
@@ -71,4 +71,31 @@ function AddDataDetails($Parent, $Filters, $IsDefault, $ImagePath, $IsOnTop, $No
 
 function getFileName($ImagePath){
 	return $ImagePath;
+}
+
+function VerifyRow($CategoryName){
+//	 var $filterArray = _extract(_getText(_div("/Showing/")), "/\\((.*) Pages/");
+//	var $NoOfPages = $filterArray[$filterArray.length-1];
+//	for(var $Pages=0; $Pages<$NoOfPages; $Pages++)
+	
+	var $NoOfPage = 1;
+	if(!_exists(_span("1", _in(_list("pagination"))))){
+		_click(_link("1", _in(_list("pagination"))));
+	}
+	while(_isVisible(_link(">", _in(_list("pagination"))))){
+		_wait(5000, _isVisible(_span("'"+$NoOfPage+"'")));
+		_log(_isVisible(_cell($CategoryName)));
+		if(_isVisible(_cell($CategoryName))){
+			_assertVisible(_cell($CategoryName));
+			return;
+		}else{
+			_click(_link(">", _in(_list("pagination"))));
+			++$NoOfPage;
+		}
+	}
+	if(_isVisible(_cell($CategoryName))){
+		_assertVisible(_cell($CategoryName));
+		return;
+	}
+	_fail($CategoryName +" was not added successfully");
 }

@@ -1,6 +1,6 @@
 function AddSEODetails($Keyword){
 	_click(_link("SEO"));
-	_setValue(_textbox("Keyword"), $Keyword);
+	//_setValue(_textbox("Keyword"), $Keyword);
 }
 
 
@@ -9,4 +9,15 @@ function AddDesignDetails($Layout){
 	if(_exists(_option($Layout))){
 		_setSelected(_select("form-control"), $Layout);
 	}	
+}
+
+function FillStatus($IsEnabled){
+	if($IsEnabled === false){
+		_setSelected(_select("status"), "Disabled");
+	}
+}
+function FillSortOrder($NoOfSortOrder){
+	if($NoOfSortOrder > 0){
+		_setValue(_textbox("Sort Order"), $NoOfSortOrder);
+	}
 }

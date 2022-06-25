@@ -1,5 +1,3 @@
-_includeAR("Filters.ar.csv", "Value");
-
 function FillFilterDetails($Name, $NoOfSortOrder){
 	var $FiltersLength = _collect("_textbox", "/.*Filter Name.*/", _in(_table("filter"))).length - 1;
 	_startLookInside(_table("filter"));
@@ -9,8 +7,8 @@ function FillFilterDetails($Name, $NoOfSortOrder){
 }
 
 function FillGroupDetails($Name, $NoOfSortOrder){
-	_setValue($_TEXTBOX_FILTERGROUPNAME, $Name);
-	_setValue($_TEXTBOX_SORTORDER, $NoOfSortOrder);
+	_setValue(_textbox("Filter Group Name"), $Name);
+	_setValue(_textbox("Sort Order"), $NoOfSortOrder);
 }
 
 function AddNewButton(){
