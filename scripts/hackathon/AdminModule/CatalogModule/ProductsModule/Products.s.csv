@@ -5,9 +5,10 @@
 
 
 "Admin Login",,"[Documentation]","Doing Admin Login to manage products"
-,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+,"[../../AdminData.csv:AdminData]","Navigate To Admin","AdminURL:"
+,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 
-"Go To Products",,"[Documentation]","Go To Products"
+"Go To Products",,"[Documentation]","Go to relevant page"
 ,,"Go To Page","_link(""Products"")","_click(_link(""Catalog""))"
 
 "Add Products",,"[Documentation]","Adding Producst"

@@ -1,7 +1,13 @@
-"AdminLogin","User Name","Password"
+"AdminLogin","UserName","Password"
 ,"admin","LhwMDQZBGxo="
 "AdminURL","AdminURL"
 ,"http://support/opencart/admin"
 
 "UserURL","UserURL"
 ,"http://support/opencart/"
+
+"Admin URL","UserName","Password"
+"http://support/opencart/","admin","LhwMDQZBGxo="
+
+"AdminData","UserName","Password","Admin URL"
+,"admin","LhwMDQZBGxo=","http://192.168.0.103/opencart/upload/admin/"

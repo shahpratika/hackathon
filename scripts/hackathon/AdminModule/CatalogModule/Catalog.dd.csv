@@ -2,7 +2,7 @@
 "CategoriesModule/Categories.s.csv"
 "FiltersModule/Filters.s.csv"
 "ManufacturerModule/Manufacturer.s.csv"
-"OptionsModule/Options.csv"
+"OptionsModule/Options.s.csv"
 "DownloadsModule/Downloads.s.csv"
 "RecurringProfilesModule/RecurringProfiles.s.csv"
 "ProductsModule/Products.s.csv"

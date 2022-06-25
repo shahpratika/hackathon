@@ -5,9 +5,10 @@
 
 
 "Admin Login",,"[Documentation]","Admin Login"
-,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+,"[../../AdminData.csv:AdminData]","Navigate To Admin","AdminURL:"
+,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 
-"Add Manufacturers",,"[Documentation]","Adding Manufacturers"
+"Add Manufacturers",,"[Documentation]","Go to relevant page"
 ,,"Go To Page","_click(_link(""Manufacturers""))","_click(_link(""Catalog""))"
 
 ,"[ManufacturersData.csv:ManufacturersData]","[Repeat]"

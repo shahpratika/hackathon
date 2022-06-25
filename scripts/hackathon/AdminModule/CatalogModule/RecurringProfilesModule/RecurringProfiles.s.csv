@@ -5,9 +5,10 @@
 
 
 "Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
-,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+,"[../../AdminData.csv:AdminData]","Navigate To Admin","AdminURL:"
+,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 
-"Go To Categories Page",,"[Documentation]","Going to relevant page"
+"Go To Categories Page",,"[Documentation]","Go to relevant page"
 ,,"Go To Page","_link(""Recurring Profiles"")","_link(""Catalog"")"
 
 "Add Recurring Profiles",,"[Documentation]","Add Recurring Profiles"
