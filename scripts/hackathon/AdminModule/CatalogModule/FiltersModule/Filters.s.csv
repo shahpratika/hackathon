@@ -2,6 +2,9 @@
 ,,"loadSahi","../../AdminLib.sah"
 ,,"loadSahi","FiltersLib.sah"
 
+"Admin Login",,"[Documentation]","Doing Admin Login to manage filters"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
 "Go To Filters Page",,"[Documentation]"
 ,,"Go To Filters"
 
@@ -14,3 +17,4 @@
 ,,"Fill Filter Details","Name:MotherBoard","No Of Sort Order:0"
 ,,"[End]"
 ,,"Save"
+,,"Verify Save"

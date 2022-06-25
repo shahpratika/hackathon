@@ -1,2 +1,8 @@
 "CategoryData","Category Name","Description","Meta Tag Title","Meta Tag Description","Meta Tag Keywords","Parent","Filters","Is Default","Image Path","Is On Top","No Of Columns","No Of Sort Order","Is Enabled","Keyword","Layout"
 ,"Hardware","Motherboards, Processors, RAM etc.","Computer Hardware","PC Harwdare: Motherboards, Processors, RAM etc.","Hardware, PC, PC Components, Motherboards, Processors, RAM, GPUs.",,"[""Motherboard"", ""CPU"", ""Speed""]","true",,"true","1","0","true","PC-Hardware"
+,"Desktops",,"Desktops",,,,,,,,,,,"desktop"
+,"Cameras",,"Cameras",,,,,,,,,,,"camera"
+,"Mac",,"Mac",,,"Desktops",,,,,,,,"mac"
+,"PC",,"PC",,,"Desktops",,,,,,,,"pc"
+,"MP3 Players",,"MP3 Players","Best Cost Effective MP3 Players",,,,,,,,,,"mp3-players"
+,"Laptops & Notebooks","Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet.","Laptops & Notebooks",,,,,,,,,,,"laptop-notebook"

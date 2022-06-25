@@ -1,2 +1,5 @@
 "#script","url","tags","depends","prerequisites","timeout_minutes"
-"CategoriesModule/Categories.dd.csv"
+"CategoriesModule/Categories.s.csv"
+"FiltersModule/Filters.s.csv"
+"ProductsModule/Products.s.csv"
+"//ManufacturerModule/Manufacturer.s.csv"

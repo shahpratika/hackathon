@@ -1,8 +1,16 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","UserModule/UserLib.sah"
 ,,"loadSahi","CreateCoupons.sah"
-,,"loadSahi","hackathon/AdminModule/AdminLib.sah"
+,,"loadSahi","AdminModule/AdminLib.sah"
 
-"TC_01",,"[Documentation]","My testcase description. Modify as needed"
+,,"[Documentation]","My testcase description. Modify as needed"
+,"[AdminModule/AdminData.csv:AdminURL]","Navigate To Admin","Admin URL:http://support/opencart/"
 ,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 ,"[MarketingData.csv:MarketingOption]","Create Coupon","Name:Happy New Year","Code:gym33","Type: Percentage","Discount:10","Total:99","date_start:2022-12-01","date_end:2023-01-31","uses_total:1","uses_coustomer:1","status:Enabled"
 ,,"LogOut"
+
+,"[AdminModule/AdminData.csv:UserURL]","Navigate To User","User URL:http://support/opencart/"
+,,"Search Product","ProductName:iphone"
+,,"Add To Cart"
+,,"View Cart"
+,"[MarketingData.csv:MarketingOption]","Apply Coupon Code","Code:deepjalao"

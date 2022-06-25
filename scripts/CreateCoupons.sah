@@ -19,7 +19,7 @@ function CreateCoupon($Name, $Code,$Type, $Discount, $Total ,$date_start,$date_e
 	_setSelected(_select("type"),$Type);
 	_setValue(_textbox("discount"), $Discount);
 	_setValue(_textbox("total"), $Total);
-	_check(_radio("/logged/"));
+	_click(_label("No"));
 	_check(_radio("/shipping/"));
 	_setValue(_textbox("date_start"),$date_start);
 	_setValue(_textbox("date_end"),$date_end);

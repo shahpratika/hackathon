@@ -3,6 +3,9 @@
 ,,"loadSahi","CategoriesLib.sah"
 ,,"loadSahi","../../AdminLib.sah"
 
+"Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
 "Go To Categories Page",,"[Documentation]"
 ,,"Go To Categories"
 
@@ -16,3 +19,6 @@
 ,,"Add Design Details","Layout:"""""
 ,,"[End]"
 ,,"Save"
+,,"Verify Save"
+
+"Verify Category Added",,"[Documentation]","Verify Category Added"

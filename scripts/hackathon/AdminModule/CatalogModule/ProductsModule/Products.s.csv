@@ -3,6 +3,9 @@
 ,,"loadSahi","ProductsLib.sah"
 
 
+"Admin Login",,"[Documentation]","Doing Admin Login to manage products"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
 "Go To Products",,"[Documentation]","Go To Products"
 ,,"Go To Products"
 
@@ -11,9 +14,14 @@
 ,"[ProductsData.csv:ProductsData]","[Repeat]"
 ,,"Add General Details","Product Name:iPhone 13","Description:A revolutionary device that brings most premium mobile features to your fingertips.","Meta Tag Title:iPhone 13","Meta Tag Description:The iPhone is available. Purchase most desired phone now.","Meta Tag Keywords:Apple iPhone, iPhone, iPhone Price, iPhone for Sales, iPhone Deals","Product Tags:iPhone, iPhone 13, Apple, Smartphone, iOS"
 ,,"Add Data Details","Model:iPhone 13","Price:149000","Tax Class:Taxable Goods","Quantity:50","Minimum Quantity:1","Subtract Stock:Yes","Out Of Stock Status:In Stock","Requires Shipping:Yes","Is Enabled:true","No Of Sort Order:0"
+
+
+
+
 ,,"[End]"
 
 
 
 
 ,,"Save"
+,,"Verify Save"
