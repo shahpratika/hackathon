@@ -46,6 +46,7 @@ function UserLogout(){
 * @param $ProductName - 
 */
 function SearchProduct($ProductName) {
+	VerifyCart();
 	_setValue(_textbox("search"), $ProductName);
 	_click(_italic("fa fa-search"));
 	_click(_button("grid-view"));
@@ -64,15 +65,7 @@ function ViewCart() {
 	_click(_span("cart-total"));
 	_click(_link("View Cart"));
 }
-/**
-* AddCoupon
-* @param $CouponCode - 
-*/
-function AddCoupon($CouponCode) {
-	_click(_link("Use Coupon Code"));
-	_setValue(_textbox("coupon"), $CouponCode);
-	_click(_button("Apply Coupon"));
-}
+
 /**
 * VerifyTax
 * @param $Country - 
@@ -156,13 +149,23 @@ function ApplyCouponCode($Code){
 	_click(_link("Use Coupon Code"));
 	_setValue(_textbox("coupon"), $Code);
 	_click(_button("Apply Coupon"));
+	_assertVisible(_div("/Success: Your coupon discount has been applied!/"));
 }
 
 function UserLogin($Username, $Password){
-	_click(_span("caret"));
+	_click(_link("My Account"));
+	_click(_link("Login"));
 	_setValue(_textbox("email"), $Username);
 	_setPassword(_password("password"), $Password);
 	_click(_submit("Login"));
 	_assertVisible(_heading2("My Account"));
-	
+
 }
+function VerifyCart() {
+	_click(_button("/inverse/"));
+	var $EmptyCart=_isVisible(_paragraph("Your shopping cart is empty!"));
+	if(!$EmptyCart) {
+		_click(_button("/danger/"));	
+	}
+}
+
