@@ -1,9 +1,6 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","Reports.sah"
 ,,"loadSahi","../../UserModule/UserLib.sah"
-,,"loadSahi","../../../Reports.sah"
-,,"loadSahi","../../../Reports.sah"
-,,"loadSahi","../AdminLib.sah"
-,,"loadSahi","../AdminLib.sah"
 ,,"loadSahi","../AdminLib.sah"
 
 "TC_01",,"[Documentation]","My testcase description. Modify as needed"
