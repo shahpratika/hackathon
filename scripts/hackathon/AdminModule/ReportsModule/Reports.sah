@@ -1,0 +1,62 @@
+
+/**
+* ViewReports
+*/
+function ViewReports() {
+	_click(_link("Reports"));
+	_click(_link("/Reports/",_under(_link("Reports"))));
+}
+/**
+* VerifyReports
+*/
+function VerifyReports($Name,$ProductName,$StartDate) {
+	var $Filters = _getOptions(_select("report"));
+	for(var $i =0; $i<$Filters.length ; $i++){
+		_setSelected(_select("report"),$Filters[$i]);
+		if($Filters[$i].indexOf("Customer")!=-1){
+			if(_isVisible(_cell("/"+$Name+"/",_under(_div($Filters[$i]))))){
+				_log("Reports are there");
+			}
+			else{
+				_log("No Reports")
+			}
+		}
+		else if($Filters[$i].indexOf("Products")!=-1){
+			if(_isVisible(_cell("/"+$ProductName+"/"))){
+				_log("Reports are there");
+			}
+			else{
+				_log("No Reports")
+			}
+		}
+		else{
+			if(_isVisible(_cell($StartDate,_under(_div($Filters[$i]))))){
+				_log("Reports are there");
+			}
+			else{
+				_log("No Reports")
+			}
+		}
+
+	}
+}
+/**
+* LogOut
+*/
+function LogOut() {
+	_click(_link("Logout"));
+}
+/**
+* ViewOnlineReport
+*/
+function ViewOnlineReport() {
+	_click(_link("Reports"));
+	_click(_link("Who's Online"));
+}
+/**
+* VerifyOnline
+*/
+function VerifyOnline($ProductName) {
+	_assertVisible(_cell("/"+"search="+$ProductName+"/",_under(_div(_div("Online List")))));
+
+}
