@@ -1,0 +1,20 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","../CatalogLib.sah"
+,,"loadSahi","RecurringProfilesLib.sah"
+,,"loadSahi","../../AdminLib.sah"
+
+
+"Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
+"Go To Categories Page",,"[Documentation]","Going to relevant page"
+,,"Go To Page","_link(""Recurring Profiles"")","_link(""Catalog"")"
+
+"Add Recurring Profiles",,"[Documentation]","Add Recurring Profiles"
+,"[RecurringProfilesData.csv:RecurringProfilesData]","[Repeat]"
+,,"Add New"
+,,"Add Recurring Profile","Name:99 per Month(1 Month Free Trial)","Price:99","Duration:12","Cycle:1","Frequency:Month","Status:Enabled","Trial Price:0","Trial Duration:1","Trial Cycle:1","Trial Frequency:Month","Trial Status:Enabled","Sort Order:1"
+,,"Save"
+,,"Verify Save"
+,,"Verify Item Added","Name:99 per Month(1 Month Free Trial) [col:Name2]"
+,,"[End]"

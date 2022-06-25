@@ -1,8 +1,2 @@
-"GroupData","Name","No Of Sort Order"
-,"Computer Components","0"
-
-"FiltersData","Name","No Of Sort Order"
-,"Motherboard","0"
-,"CPU","1"
-"//","RAM","2"
-"//","GPU","3"
+"FiltersData","Name","No Of Sort Order","Values"
+,"Computer Components","0","[{""Name"": ""RAM"", ""$NoOfSortOrder"" : 0}, {""Name"": ""CPU"", ""$NoOfSortOrder"" : 2}, {""Name"": ""GPU"", ""$NoOfSortOrder"" : 1}]"

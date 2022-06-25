@@ -1,3 +1,21 @@
+function AddSubSections($Values){
+	$Values = JSON.parse($Values);
+	_startLookInside(_fieldset("/Values/"));
+	for(var $i=0; $i<$Values.length; $i++){
+		AddNewButton();
+		$Value = $Values[$i];
+		_setValue(_textbox("/Name/["+$i+"]"), $Value.Name);
+		_setValue(_textbox("Sort Order["+$i+"]"), $Value.NoOfSortOrder);
+		if($Value.ImagePath) SetImage($Value.ImagePath);
+	}
+	_stopLookInside();
+}
+
+
+function AddNewButton(){
+	_click(_button("btn btn-primary"));
+}
+
 function AddSEODetails($Keyword){
 	_click(_link("SEO"));
 //	_setValue(_textbox("Keyword"), $Keyword);

@@ -1,0 +1,6 @@
+function AddDownloads($Name, $FilePath, $Maskvalue){
+	_setValue(_textbox("Download Name"), $Name);
+	_setFile3(_button("Upload"), $FilePath);
+	_wait(2000, _getText(_textbox("Filename")).length > 0);
+	_setValue(_textbox("Mask"), $Maskvalue);
+}

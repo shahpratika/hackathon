@@ -1,0 +1,22 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","DownloadsLib.sah"
+,,"loadSahi","../CatalogLib.sah"
+,,"loadSahi","../../AdminLib.sah"
+
+
+"Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
+"Go To Page",,"[Documentation]","Going to relevant page"
+,,"Go To Page","_link(""Downloads"")","_link(""Catalog"")"
+
+"Add Downloads",,"[Documentation]","Add Downloads"
+,"[DownloadsData.csv:DownloadsData]","[Repeat]"
+,,"Add New"
+,,"Add Downloads","Name:Rich Dad poor Dad","File Path:Resources/sample.pdf"
+,,"Save"
+,,"Verify Save"
+,,"Verify Item Added","Name:Rich Dad poor Dad"
+,,"[End]"
+
+"//"

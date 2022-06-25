@@ -1,0 +1,21 @@
+"TestCase","Data","Key Word","Argument 1","Argument 2"
+,,"loadSahi","OptionsLib.sah"
+,,"loadSahi","../CatalogLib.sah"
+,,"loadSahi","../../AdminLib.sah"
+
+
+"Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
+,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
+
+"Go To Page",,"[Documentation]","Going to relevant page"
+,,"Go To Page","_link(""Options"")","_link(""Catalog"")"
+
+"Add Options",,"[Documentation]","Add Options"
+,"[Options.csv:OptionsData]","[Repeat]"
+,,"Add New"
+,,"Add Options","Name:Color","Type:Radio","No Of Sort Order:0","Values:[{""Name"": ""Black"", ""ImagePath"":"""", ""$NoOfSortOrder"" : 0}, {""Name"": ""White"", ""ImagePath"":"""", ""$NoOfSortOrder"" : 2}, {""Name"": ""Blue"", ""ImagePath"":"""", ""$NoOfSortOrder"" : 1}]"
+,,"Save"
+,,"Verify Save"
+,,"Verify Item Added","Name:Color"
+,,"[End]"
+"//"

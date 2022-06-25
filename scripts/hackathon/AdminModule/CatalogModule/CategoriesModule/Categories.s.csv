@@ -6,7 +6,7 @@
 "Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
 ,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
 
-"Go To Categories Page",,"[Documentation]"
+"Go To Categories Page",,"[Documentation]","Going to relevant page"
 ,,"Go To Page","_link(""Categories"")","_click(_link(""Catalog""))"
 
 "Create Categories",,"[Documentation]","Creating Categories"

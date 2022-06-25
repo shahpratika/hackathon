@@ -1,0 +1,24 @@
+/**
+* AddRecurringProfile
+* @param $Name - 
+* @param $Price - 
+* @param $Duration - 
+* @param $Frequency - 
+* @param $Status - 
+* @param $TrialFrequency - 
+* @param $TrialStatus - 
+* @param $TrialDuration - 
+* @param $SortOrder - 
+*/
+function AddRecurringProfile($Name, $Price, $Duration, $Cycle, $Frequency, $Status, 
+	$TrialPrice, $TrialDuration, $TrialCycle, $TrialFrequency, $TrialStatus, $SortOrder) {
+	_setValue(_textbox("Name"), $Name);
+	_doubleClick(_textbox("Duration"));
+	_setValue(_textbox("Duration"), $Duration);
+	_setSelected(_select("frequency"), $Frequency);
+	_setSelected(_select("status"), $Status);
+	_setSelected(_select("trial_frequency"), $TrialFrequency);
+	_setSelected(_select("trial_status"), $TrialStatus);
+	_setValue(_textbox("Trial duration"), $TrialDuration);
+	_setValue(_textbox("Sort Order"), $SortOrder);
+}

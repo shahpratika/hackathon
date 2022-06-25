@@ -1,21 +1,21 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
-,,"loadSahi","../../AdminLib.sah"
-,,"loadSahi","../CatalogLib.sah"
 ,,"loadSahi","FiltersLib.sah"
+,,"loadSahi","../CatalogLib.sah"
+,,"loadSahi","../../AdminLib.sah"
 
-"Admin Login",,"[Documentation]","Doing Admin Login to manage filters"
+
+"Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
 ,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
 
-"Go To Filters Page",,"[Documentation]"
-,,"Go To Page","_link(""Filters"")","_click(_link(""Catalog""))"
+"Go To Filters Page",,"[Documentation]","Going to relevant page"
+,,"Go To Page","_link(""Filters"")","_link(""Catalog"")"
 
-"Create Filters",,"[Documentation]","Creating Filters"
-,,"Add New"
-
-,"[FiltersData.csv:GroupData]","Fill Group Details","Name:Computer Components","No Of Sort Order:0"
+"Add Filters",,"[Documentation]","Add Filters"
 ,"[FiltersData.csv:FiltersData]","[Repeat]"
-,,"Add New Button"
-,,"Fill Filter Details","Name:MotherBoard","No Of Sort Order:0"
-,,"[End]"
+,,"Add New"
+,,"Add Filters","Name:Computer Components","No Of Sort Order:0","Values:[{""Name"": ""RAM"", ""$NoOfSortOrder"" : 0}, {""Name"": ""CPU"", ""$NoOfSortOrder"" : 2}, {""Name"": ""GPU"", ""$NoOfSortOrder"" : 1}]"
 ,,"Save"
 ,,"Verify Save"
+,,"Verify Item Added","Name:Computer Components"
+,,"[End]"
+"//"

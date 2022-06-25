@@ -48,9 +48,7 @@ function AddDataDetails($Parent, $Filters, $IsDefault, $ImagePath, $IsOnTop, $No
 	if($NoOfColumns){
 		_setValue(_textbox("Columns"), $NoOfColumns);
 	}
-	if($NoOfSortOrder > 0){
-		_setValue(_textbox("Sort Order"), $NoOfSortOrder);
-	}
+	FillSortOrder($NoOfSortOrder);
 	if(!$IsEnabled){
 		_setSelected(_select("status"), "Disabled");
 	}
