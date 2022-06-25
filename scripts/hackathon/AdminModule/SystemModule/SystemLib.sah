@@ -146,7 +146,7 @@ function CreateUser($Username, $UserGroupId, $FirstName, $LastName, $EMail, $Pas
 	_click(_link("/Users/",_under(_link("Users"))));
 	_click(_link("/primary/", _leftOf(_button("/danger/"))));
 	_setValue(_textbox("Username", _near(_label("Username"))), $Username);
-	_assertEqual($UserGroupId, _getSelectedText(_select("user_group_id")));
+	_setSelected(_select("user_group_id"), $UserGroupId);
 	_setValue(_textbox("First Name"), $FirstName);
 	_setValue(_textbox("Last Name"), $LastName);
 	_setValue(_textbox("E-Mail"), $EMail);
