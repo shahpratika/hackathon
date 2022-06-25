@@ -7,7 +7,7 @@
 ,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
 
 "Go To Filters Page",,"[Documentation]"
-,,"Go To Filters"
+,,"Go To Page","_link(""Filters"")","_click(_link(""Catalog""))"
 
 "Create Filters",,"[Documentation]","Creating Filters"
 ,,"Add New"

@@ -7,17 +7,17 @@
 ,"[../../AdminData.csv:AdminLogin]","Admin Login","User Name:admin","Password:opencart"
 
 "Go To Categories Page",,"[Documentation]"
-,,"Go To Categories"
+,,"Go To Page","_link(""Categories"")","_click(_link(""Catalog""))"
 
 "Create Categories",,"[Documentation]","Creating Categories"
 ,"[CategoriesData.csv:CategoryData]","[Repeat]"
 ,,"Add New"
-,,"Add General Details","Category Name:""Hardware""","Description:""Motherboards, Processors, RAM etc.""","Meta Tag Title:""Computer Hardware""","Meta Tag Description:""PC Harwdare: Motherboards, Processors, RAM etc.""","Meta Tag Keywords:""Hardware, PC, PC Components, Motherboards, Processors, RAM, GPUs."""
+,,"Add General Details","Name:""Hardware""","Description:""Motherboards, Processors, RAM etc.""","Meta Tag Title:""Computer Hardware""","Meta Tag Description:""PC Harwdare: Motherboards, Processors, RAM etc.""","Meta Tag Keywords:""Hardware, PC, PC Components, Motherboards, Processors, RAM, GPUs."""
 
 ,,"Add Data Details","Parent:""""","Filters:[Motherboard, CPU, Speed]","Is Default:true","Image Path:""""","Is On Top:true","No Of Columns:1","No Of Sort Order:0","Is Enabled:true"
 ,,"Add SEO Details","Keyword:PC-Hardware"
 ,,"Add Design Details","Layout:"""""
 ,,"Save"
 ,,"Verify Save"
-,,"Verify Row","Category Name:""Hardware"""
+,,"Verify Item Added","Name:""Hardware"""
 ,,"[End]"

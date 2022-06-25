@@ -14,13 +14,3 @@ function FillGroupDetails($Name, $NoOfSortOrder){
 function AddNewButton(){
 	_click(_button("btn btn-primary"));
 }
-
-function GoToFilters(){
-//	if(_isVisible(_link("Filters"))){
-		_click(_link("Filters"));
-//	}else if(_link("Categories")){
-//		
-//	}else{
-//		_log("Not able to go to Filters Page");
-//	}
-}

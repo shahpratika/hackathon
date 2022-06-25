@@ -1,10 +1,7 @@
 _include("../../AdminLib.sah");
-function GoToProducts(){
-	_click(_link("Products"));
-}
 
-function AddGeneralDetails($ProductName, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords, $ProductTags){
-	_setValue(_textbox("Product Name"), $ProductName);
+function AddGeneralDetails($Name, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords, $ProductTags){
+	_setValue(_textbox("Product Name"), $Name);
 	_setValue(_div("note-editable"), $Description);
 	_setValue(_textbox("Meta Tag Title"), $MetaTagTitle);
 	_setValue(_textarea("Meta Tag Description"), $MetaTagDescription);

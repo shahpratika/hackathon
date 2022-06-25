@@ -1,0 +1,8 @@
+_include("../CatalogLib.sah");
+
+function AddManufacturers($Name, $IsDefault, $ImagePath, $NoOfSortOrder){
+	_setValue(_textbox("Manufacturer Name"), $Name);
+	SetIsDefault($IsDefault);
+	SetImage($ImagePath);
+	FillSortOrder($NoOfSortOrder);
+}

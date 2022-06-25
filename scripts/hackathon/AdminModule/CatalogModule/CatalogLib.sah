@@ -1,8 +1,40 @@
 function AddSEODetails($Keyword){
 	_click(_link("SEO"));
-	//_setValue(_textbox("Keyword"), $Keyword);
+//	_setValue(_textbox("Keyword"), $Keyword);
 }
 
+function SetIsDefault($IsDefault){
+	if($IsDefault == false){
+		_uncheck(_checkbox("/store/"));
+	}else{
+		_check(_checkbox("/store/"));
+	}
+}
+
+function SetImage($ImagePath){
+	if($ImagePath){
+		var $ImageEl = _image(0, _near(_label("Image")));
+		_click($ImageEl);
+		_click(_button("button-image"));
+		_click(_button("button-upload"));
+		if(!_exists(_image(getFileName($ImagePath)))){
+			_setFile3(_file("file[]"), $ImagePath);
+			_check(_checkbox(getFileName($ImagePath)));
+		}
+		_click(_image(getFileName($ImagePath)));
+	}
+}
+
+function getFileName($ImagePath){
+	return $ImagePath;
+}
+
+function GoToPage($PageEl, $ParentEl){
+	if($ParentEl){
+		_click($ParentEl);
+	}
+	_click($PageEl);
+}
 
 function AddDesignDetails($Layout){
 	_click(_link("Design", _in(_div("panel panel-default"))));
@@ -20,4 +52,31 @@ function FillSortOrder($NoOfSortOrder){
 	if($NoOfSortOrder > 0){
 		_setValue(_textbox("Sort Order"), $NoOfSortOrder);
 	}
+}
+
+function VerifyItemAdded($Name){
+//	 var $filterArray = _extract(_getText(_div("/Showing/")), "/\\((.*) Pages/");
+//	var $NoOfPages = $filterArray[$filterArray.length-1];
+//	for(var $Pages=0; $Pages<$NoOfPages; $Pages++)
+	
+	var $NoOfPage = 1;
+	if(!_exists(_span("1", _in(_list("pagination"))))){
+		if(_exists(_link("1", _in(_list("pagination"))))) _click(_link("1", _in(_list("pagination"))));
+	}
+	while(_isVisible(_link(">", _in(_list("pagination"))))){
+		_wait(5000, _isVisible(_span("'"+$NoOfPage+"'")));
+		_log(_isVisible(_cell($Name)));
+		if(_isVisible(_cell($Name))){
+			_assertVisible(_cell($Name));
+			return;
+		}else{
+			_click(_link(">", _in(_list("pagination"))));
+			++$NoOfPage;
+		}
+	}
+	if(_isVisible(_cell($Name))){
+		_assertVisible(_cell($Name));
+		return;
+	}
+	_fail("Item was not added successfully");
 }

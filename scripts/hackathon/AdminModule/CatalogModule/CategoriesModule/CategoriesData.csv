@@ -1,4 +1,4 @@
-"CategoryData","Category Name","Description","Meta Tag Title","Meta Tag Description","Meta Tag Keywords","Parent","Filters","Is Default","Image Path","Is On Top","No Of Columns","No Of Sort Order","Is Enabled","Keyword","Layout"
+"CategoryData","Name","Description","Meta Tag Title","Meta Tag Description","Meta Tag Keywords","Parent","Filters","Is Default","Image Path","Is On Top","No Of Columns","No Of Sort Order","Is Enabled","Keyword","Layout"
 ,"Hardware","Motherboards, Processors, RAM etc.","Computer Hardware","PC Harwdare: Motherboards, Processors, RAM etc.","Hardware, PC, PC Components, Motherboards, Processors, RAM, GPUs.",,"[""Motherboard"", ""CPU"", ""Speed""]","true",,"true","1","0","true","PC-Hardware"
 ,"Desktops",,"Desktops",,,,,,,,,,,"desktop"
 ,"Cameras",,"Cameras",,,,,,,,,,,"camera"
