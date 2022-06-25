@@ -1,0 +1,12 @@
+_navigateTo("http://amazon.com");
+_startHarLogging();
+var $harLogs = _getHarLogs();
+_log($harLogs.length);
+for (var $i=0; $i<$harLogs.length; $i++) {
+	var $harLog = $harLogs[$i];
+}
+	var $b = $harLog.responseContent;
+	for( var $j=0; $j<$b.length;j++){
+		_log($b[j]);
+	}
+_stopHarLogging();
