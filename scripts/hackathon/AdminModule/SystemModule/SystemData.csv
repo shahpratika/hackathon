@@ -1,0 +1,11 @@
+"CurrencyData","Currency Title","Code","Symbol","Decimal","Value","Status","Success Message"
+,"""Indian Rupees""","""INR""","₹","2","""1.00000""","""Enabled""","""/Success: You have modified currencies!/"""
+
+"TaxData","Geo Zone","Description","GeoZone SuccessMessage","Tax Name","Tax Rate","Type","TaxRate Success Message","Priority No","TaxClassSuccess Message"
+,"India Shipping","India Shipping Zone","/Success: You have modified geo zones!/","GST","18","Percentage","/Success: You have modified tax rates!/","1","/Success: You have modified tax classes!/"
+
+"ReturnReason","Return Reason Name","Success Message"
+,"""No longer needed""","/Success: You have modified return reasons!/"
+
+"UserData","Username Username","User Group Id","First Name","Last Name","E Mail","Password","Confirm","Status","Success Message"
+,"shahpratika","Administrator","Pratik","Shah","shah.pratik123@gmail.com","NQkaFxZBAQdQJQA=","NQkaFxZBAQdQJQA=","Enabled","/Success: You have modified users!/"
