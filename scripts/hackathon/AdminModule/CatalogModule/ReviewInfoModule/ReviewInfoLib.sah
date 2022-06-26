@@ -1,0 +1,133 @@
+_include("../../../UserModule/UserLib.sah");
+_include("../../AdminLib.sah");
+_include("hackathon/UserModule/UserLib.sah");
+_include("hackathon/AdminModule/AdminLib.sah");
+
+/**
+* AddInformation
+* @param $InformationTitle - 
+* @param $MetaTagTitle - 
+* @param $SortOrder - 
+* @param $Keyword - 
+*/
+function AddInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrder, $Keyword) {
+	_click(_link("Catalog"));
+	_click(_link("Information"));
+	if(_isVisible(_cell($InformationTitle))){
+		_log("Content policy is already there")
+	}
+	else{
+		_click(_link("btn btn-primary"));
+		_setValue(_textbox("Information Title"), $InformationTitle);
+		_setValue(_textbox("Meta Tag Title"), $MetaTagTitle);
+		_setValue(_div("/editable/"),$Description);
+		_click(_link("Data"));
+		_check(_checkbox("bottom"));
+		_setValue(_textbox("Sort Order"), $SortOrder);
+		_click(_link("SEO"));
+		_setValue(_textbox("Keyword"), $Keyword);
+		_click(_submit("btn btn-primary"));
+		_assertVisible(_cell($InformationTitle,_under(_cell("Information Title"))));
+	}
+}
+/**
+* VerifyInformation
+*/
+function VerifyInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrder, $Keyword) {
+	var $Information= _collectAttributes("_cell","/.*/","sahiText",_under(_cell("Information Title")))
+	_navigateTo("/opencart/");
+	for(var $i=0; $i<$Information.length ; $i++){
+		if(_isVisible(_link($Information[$i]))){
+			_log("info is there");
+		}
+		else{
+			_navigateTo("/opencart/admin/");
+			AdminLogin("admin", "opencart");
+			AddInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrder, $Keyword);
+
+		}
+	}
+}
+/**
+* UserLogin
+* @param $EMailAddress - 
+* @param $Password - 
+*/
+function UserLogin($EMailAddress, $Password) {
+	_navigateTo("/opencart/");
+	_click(_link("My Account"));
+	_click(_link("Login"));
+	_setValue(_textbox("E-Mail Address"), $EMailAddress);
+	_setPassword(_password("password"), $Password);
+	_click(_submit("Login"));
+	_click(_link("/home/"));
+}
+/**
+* CreateReview
+* @param $Name - 
+* @param $Text - 
+* @param $Text1 - 
+*/
+function CreateReview($Name, $Text,$Product,$Rating) {
+	_navigateTo("/opencart/admin/");
+	AdminLogin("admin","LhwMDQZBGxo=");
+	_click(_link("Catalog"));
+	_click(_link("Reviews"));
+	var $bol=_isVisible(_cell($Name,_rightOf(_cell($Product))));
+	if($bol ){
+		_log("reviews are already there");
+	}
+	else{
+		UserLogin("srushtidhadawai@gmail.com","cF5aV1A=");
+		_click(_link($Product));
+		_click(_link("/Reviews/"));
+		_setValue(_textbox("name"), $Name);
+		_setValue(_textarea("text"), $Text);
+		_check(_radio($Rating));
+		_click(_button("Continue"));
+		_assertVisible(_div("/Thank you for your review/"));
+		_click(_button("Continue"));
+		UserLogout();
+		_navigateTo("/opencart/admin/");
+		AdminLogin("admin","LhwMDQZBGxo=");
+		VerifyReview($Name,$Product);
+	}
+}
+/**
+* VerifyReview
+*/
+function VerifyReview($Name,$Product) {
+	_click(_link("Catalog"));
+	_click(_link("Reviews"));
+	_assertVisible(_cell($Name,_rightOf(_cell($Product))));
+}
+/**
+* EnableReview
+* @param $Status - 
+*/
+function EnableReview($Status,$Product) {
+	_click(_link("/primary/",_in(_row($Product))))
+	_setSelected(_select("status"), $Status);
+	_click(_submit("btn btn-primary"))
+}
+/**
+* VerifyReviewInUser
+*/
+function VerifyReviewInUser($Product,$Name) {
+	_click(_link($Product));
+	_click(_link("/Reviews/"));
+	_assertVisible(_div($Name));
+	_click(_link("/home/"));
+}
+/**
+ * Delete Reviews()
+ */
+function DeleteReviews($Product){
+	_navigateTo("/opencart/admin/");
+	AdminLogin("admin","LhwMDQZBGxo=");
+	_click(_link("Catalog"));
+	_click(_link("Reviews"));
+	_check(_checkbox("/selected/",_in(_row($Product))))
+	_click(_button("/danger/"));
+}
+

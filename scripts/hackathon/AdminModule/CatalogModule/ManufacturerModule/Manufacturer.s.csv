@@ -19,3 +19,7 @@
 ,,"Verify Save"
 ,,"Verify Item Added","Name: Opencart"
 ,,"[End]"
+
+
+"Log Out",,"[Documentation]","Log Out"
+,,"Admin Logout"

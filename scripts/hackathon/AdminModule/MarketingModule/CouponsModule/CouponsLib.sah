@@ -1,0 +1,60 @@
+
+/**
+* AddCoupons
+* @param $Name - 
+* @param $Code - 
+* @param $Discount - 
+* @param $Total - 
+*/
+function CreateCoupon($Name, $Code,$Type, $Discount, $Total ,$date_start,$date_end,$uses_total,$uses_coustomer,$status) {
+	_click(_link("Marketing"));
+	_click(_link("Coupons"));
+	if(_isVisible(_cell($Code)) && _isVisible(_cell($Name))){
+		_log("Coupon is already there");
+	}
+	else{
+	_click(_link("/primary/",_in(_div("/Coupons/"))));
+	_setValue(_textbox("name"), $Name);
+	_setValue(_textbox("code"), $Code);
+	_setSelected(_select("type"),$Type);
+	_setValue(_textbox("discount"), $Discount);
+	_setValue(_textbox("total"), $Total);
+	_click(_label("No"));
+	_check(_radio("/shipping/"));
+	_setValue(_textbox("date_start"),$date_start);
+	_setValue(_textbox("date_end"),$date_end);
+	_setValue(_textbox("/uses_total/"),$uses_total);
+	_setValue(_textbox("/uses_customer/"),$uses_coustomer);
+	_setSelected(_select("status"),$status);
+	_click(_submit("/primary/",_in(_div("/Coupons/"))));
+	_assertVisible(_cell($Name,_under(_cell("Coupon Name"))))
+	//_click(_link("Logout"));
+}
+}
+/**
+* LogOut
+*/
+function LogOut() {
+	_click(_link("Logout"));
+}
+/**
+* AddMarketing
+* @param $Name - 
+* @param $Description - 
+*/
+function AddMarketing($Name, $Description,$code,$Example1,$Example2) {
+	_click(_link("Marketing"));
+	_click(_link("/Marketing/",_under(_link("Marketing"))));
+	if(_isVisible(_cell($Name))){
+	_log("Campaign Name already there");
+	}
+	else{
+	_click(_link("btn btn-primary"));
+	_setValue(_textbox("name"), $Name);
+	_setValue(_textarea("description"), $Description);
+	_setValue(_textbox("code"), $code);
+	_setValue(_textbox("input-example1"), $Example1);
+	_setValue(_textbox("input-example2"), $Example2);
+	_click(_submit("btn btn-primary"));
+	}
+}

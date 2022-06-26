@@ -20,3 +20,6 @@
 ,,"Verify Item Added","Name:Computer Components"
 ,,"[End]"
 "//"
+
+"Log Out",,"[Documentation]","Log Out"
+,,"Admin Logout"

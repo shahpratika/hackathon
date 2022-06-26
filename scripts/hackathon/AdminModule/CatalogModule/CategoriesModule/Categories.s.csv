@@ -22,3 +22,7 @@
 ,,"Verify Save"
 ,,"Verify Item Added","Name:""Hardware"""
 ,,"[End]"
+
+
+"Log Out",,"[Documentation]","Log Out"
+,,"Admin Logout"

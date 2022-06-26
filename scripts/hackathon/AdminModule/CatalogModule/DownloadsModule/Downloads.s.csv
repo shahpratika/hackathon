@@ -20,4 +20,6 @@
 ,,"Verify Item Added","Name:Rich Dad poor Dad"
 ,,"[End]"
 
-"//"
+
+"Log Out",,"[Documentation]","Log Out"
+,,"Admin Logout"

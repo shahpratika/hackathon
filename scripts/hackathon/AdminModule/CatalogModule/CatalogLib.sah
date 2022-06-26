@@ -34,17 +34,30 @@ function SetImage($ImagePath){
 		var $ImageEl = _image(0, _near(_label("Image")));
 		_click($ImageEl);
 		_click(_button("button-image"));
-		_click(_button("button-upload"));
-		if(!_exists(_image(getFileName($ImagePath)))){
-			_setFile3(_file("file[]"), $ImagePath);
-			_check(_checkbox(getFileName($ImagePath)));
+//		_wait(1000, _isVisible(_button("button-upload")));
+		_click(_click(_button("btn btn-primary")));
+		_setFile3(_button("button-upload"), $ImagePath);
+		var $FileName = getFileName($ImagePath);
+		_log($FileName);
+		_wait(3000, _isVisible(_image("/"+$FileName+"/")));
+		if($FileName && _isVisible(_image("/"+$FileName+"/"))){
+				_check(_checkbox("/"+$FileName+"/"));
+				_click(_image("/"+$FileName+"/"));
+		}else{
+			_fail("filepath provided is incorrect");
 		}
-		_click(_image(getFileName($ImagePath)));
 	}
 }
 
-function getFileName($ImagePath){
-	return $ImagePath;
+function getFileName($FilePath){
+	if($FilePath){
+		var $LastIndex = $FilePath.lastIndexOf("/")+1;
+		var $DotIndex = $FilePath.lastIndexOf(".")-1;
+		if($LastIndex != -1){
+			return $FilePath.substring($LastIndex, $DotIndex);
+		}
+	}
+	return "";
 }
 
 function GoToPage($PageEl, $ParentEl){
