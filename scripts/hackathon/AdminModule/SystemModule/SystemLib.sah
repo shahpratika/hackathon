@@ -45,6 +45,8 @@ function CreateGeoZone($GeoZone, $Description, $SuccessMessage){
 		_click(_link("/primary/", _leftOf(_button("/danger/"))));
 		_setValue(_textbox("name", _rightOf(_label("Geo Zone Name"))), $GeoZone);
 		_setValue(_textbox("description"),$Description );
+		_click(_button("button-geo-zone"));
+		_setSelected (_select("/zone_to_geo_zone/"),$GeoZone);
 		_click(_submit("/primary/", _leftOf(_link("/default/"))));
 		_assertVisible(_div($SuccessMessage));
 	}
@@ -113,7 +115,7 @@ function ChooseTaxClass($TaxName, $PriorityNo, $SuccessMessage) {
  * @param  $SuccessMessage - 
  */
 function AddReturnReason($ReturnReasonName,$SuccessMessage) {
-//	_click(_link("System"));
+	//	_click(_link("System"));
 	_click(_link("Localisation"));
 	_click(_link("Returns", _under(_link("Order Statuses"))));
 	_click(_link("Return Reasons", _near(_link("/Returns/"))));
@@ -141,7 +143,7 @@ function AddReturnReason($ReturnReasonName,$SuccessMessage) {
  * @param  $Status - 
  */
 function CreateUser($Username, $UserGroupId, $FirstName, $LastName, $EMail, $Password, $Confirm, $Status, $SuccessMessage){
-//	_click(_link("System"));
+	//	_click(_link("System"));
 	_click(_link("Users"));
 	_click(_link("/Users/",_under(_link("Users"))));
 	_click(_link("/primary/", _leftOf(_button("/danger/"))));
