@@ -1,0 +1,2 @@
+#script,url,tags,depends,prerequisites,timeout_minutes,testcases
+CatalogModule/ReviewInfoModule/ReviewInfo.s.csv,,"ReviewInfo.s.csv,,Catalog.dd.csv",ProductsModule/Products.s.csv,,,

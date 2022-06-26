@@ -1,2 +1,5 @@
 "AdminData","UserName","Password","Admin URL"
 ,"admin","LhwMDQZBGxo=","http://192.168.0.103/opencart/upload/admin/"
+
+"AdminURL","AdminURL"
+,"http://192.168.0.103/opencart/upload/admin/"

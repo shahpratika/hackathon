@@ -1,4 +1,11 @@
 _include("../../AdminLib.sah");
+_include("../CatalogLib.sah");
+
+function AddLinksDetails($Manufacturer, $Categories, $Filters){
+		FillMultiValues($Manufacturer, _textbox("Manufacturer"));
+		FillMultiValues($Categories, _textbox("Categories"));
+		FillMultiValues($Filters, _textbox("Filters"));
+}
 
 function AddGeneralDetails($Name, $Description, $MetaTagTitle, $MetaTagDescription, $MetaTagKeywords, $ProductTags){
 	_setValue(_textbox("Product Name"), $Name);

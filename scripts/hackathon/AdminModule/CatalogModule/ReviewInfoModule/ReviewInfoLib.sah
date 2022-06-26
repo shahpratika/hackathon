@@ -79,7 +79,10 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 	}
 	else{
 		_navigateTo($URL, true);
+		GoToRegister();
+		AddPersonalDetails("srushti", "Mish", "srushtidhadawai@gmail.com", 1111111111, "cF5aV1A=", "cF5aV1A=");
 		UserLogin("srushtidhadawai@gmail.com","cF5aV1A=");
+		SearchProduct($Product);
 		_click(_link($Product));
 		_click(_link("/Reviews/"));
 		_setValue(_textbox("name"), $Name);

@@ -1,3 +1,22 @@
+function FillMultiValues($Values, $Element){
+	if($Filters && $Filters.length >0){
+//		_log()
+		$Filters = JSON.parse($Filters);
+		for(var $i = 0; $i < $Filters.length; $i++){
+			var $FilterValue = $Filters[$i];
+			var $FilterEl = _link("/"+$FilterValue +"/");
+			_setValue($Element, $FilterValue);
+			_wait(2000, _isVisible($FilterEl));
+//			_log(_link("/"+$FilterValue +"/"));
+			var $FilterExists = _isVisible($FilterEl);
+			//_log($FilterExists);
+			if($FilterExists){
+				_click($FilterEl);
+			}
+		}
+	}
+}
+
 function AddSubSections($Values){
 	$Values = JSON.parse($Values);
 	_startLookInside(_fieldset("/Values/"));
