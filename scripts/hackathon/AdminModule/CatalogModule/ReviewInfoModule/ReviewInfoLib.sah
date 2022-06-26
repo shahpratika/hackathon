@@ -48,6 +48,10 @@ function VerifyInformation($InformationTitle,$Description, $MetaTagTitle, $SortO
 		}
 	}
 }
+
+function GoToUser(){
+	_navigateTo($URL);
+}
 /**
 * UserLogin
 * @param $EMailAddress - 
@@ -73,7 +77,7 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 	AdminLogin("admin","LhwMDQZBGxo=");
 	_click(_link("Catalog"));
 	_click(_link("Reviews"));
-	var $bol=_isVisible(_cell($Name,_rightOf(_cell($Product))));
+	var $bol=_isVisible(_cell($Name,_rightOf(_cell("/"+$Product+"/"))));
 	if($bol ){
 		_log("reviews are already there");
 	}
@@ -83,7 +87,7 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 		AddPersonalDetails("srushti", "Mish", "srushtidhadawai@gmail.com", 1111111111, "cF5aV1A=", "cF5aV1A=");
 		UserLogin("srushtidhadawai@gmail.com","cF5aV1A=");
 		SearchProduct($Product);
-		_click(_link($Product));
+		_click(_link("/"+$Product+"/"));
 		_click(_link("/Reviews/"));
 		_setValue(_textbox("name"), $Name);
 		_setValue(_textarea("text"), $Text);
@@ -103,14 +107,14 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 function VerifyReview($Name,$Product) {
 	_click(_link("Catalog"));
 	_click(_link("Reviews"));
-	_assertVisible(_cell($Name,_rightOf(_cell($Product))));
+	_assertVisible(_cell($Name,_rightOf(_cell("/"+$Product+"/"))));
 }
 /**
 * EnableReview
 * @param $Status - 
 */
 function EnableReview($Status,$Product) {
-	_click(_link("/primary/",_in(_row($Product))))
+	_click(_link("/primary/",_in(_row("/"+$Product+"/"))))
 	_setSelected(_select("status"), $Status);
 	_click(_submit("btn btn-primary"))
 }
@@ -118,9 +122,11 @@ function EnableReview($Status,$Product) {
 * VerifyReviewInUser
 */
 function VerifyReviewInUser($Product,$Name) {
-	_click(_link($Product));
+	SearchProduct($Product);
+
+	_click(_link("/"+$Product+"/"));
 	_click(_link("/Reviews/"));
-	_assertVisible(_div($Name));
+	_assertVisible(_strong($Name));
 	_click(_link("/home/"));
 }
 /**
@@ -131,7 +137,7 @@ function DeleteReviews($Product){
 	AdminLogin("admin","LhwMDQZBGxo=");
 	_click(_link("Catalog"));
 	_click(_link("Reviews"));
-	_check(_checkbox("/selected/",_in(_row($Product))))
+	_check(_checkbox("/selected/",_in(_row("/"+$Product+"/"))));
 	_click(_button("/danger/"));
 }
 

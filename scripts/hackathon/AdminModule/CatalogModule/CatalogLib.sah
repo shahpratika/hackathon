@@ -1,9 +1,9 @@
 function FillMultiValues($Values, $Element){
-	if($Filters && $Filters.length >0){
+	if($Values && $Values.length >0){
 //		_log()
-		$Filters = JSON.parse($Filters);
-		for(var $i = 0; $i < $Filters.length; $i++){
-			var $FilterValue = $Filters[$i];
+		$Values = JSON.parse($Values);
+		for(var $i = 0; $i < $Values.length; $i++){
+			var $FilterValue = $Values[$i];
 			var $FilterEl = _link("/"+$FilterValue +"/");
 			_setValue($Element, $FilterValue);
 			_wait(2000, _isVisible($FilterEl));

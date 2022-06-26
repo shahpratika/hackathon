@@ -1,5 +1,9 @@
-"#script","tags"
+"#script","tags","depends"
 "SystemModule/SystemModule.s.csv"
 "CatalogModule/Catalog.dd.csv"
 "MarketingModule/Marketing.dd.csv"
-"ReportsModule/Reports.s.csv"
+
+"CatalogModule/ProductsModule/Products.s.csv",,"CatalogModule/Catalog.dd.csv"
+"CatalogModule/ReviewInfoModule/ReviewInfo.s.csv",,"CatalogModule/ProductsModule/Products.s.csv"
+"MarketingModule/CouponsModule/Coupons.s.csv",,"CatalogModule/ProductsModule/Products.s.csv"
+"//ReportsModule/Reports.s.csv"

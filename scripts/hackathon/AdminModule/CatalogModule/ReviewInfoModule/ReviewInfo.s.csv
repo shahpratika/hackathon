@@ -18,7 +18,8 @@
 ,,"Create Review","Name:srushti A","Text:""I have been dreaming of using the iPhone for quite a while and finally, I got an awesome piece of technology.\\n""","Product:iPhone","Rating:rating[3]"
 
 ,,"Enable Review","Status:Enabled","Product:"
-,,"User Login","EMailAddress:srushtidhadawai@gmail.com","Password:cF5aV1A="
+,,"Go To User"
+,,"User Login","Username:srushtidhadawai@gmail.com","Password:cF5aV1A="
 ,,"Verify Review In User","Name:gg","Product:hh"
 ,,"User Logout"
 ,,"DeleteReviews","Product:gg"

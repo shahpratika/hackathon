@@ -2,6 +2,7 @@ _include("../../AdminLib.sah");
 _include("../CatalogLib.sah");
 
 function AddLinksDetails($Manufacturer, $Categories, $Filters){
+		_click(_link("Links"));
 		FillMultiValues($Manufacturer, _textbox("Manufacturer"));
 		FillMultiValues($Categories, _textbox("Categories"));
 		FillMultiValues($Filters, _textbox("Filters"));

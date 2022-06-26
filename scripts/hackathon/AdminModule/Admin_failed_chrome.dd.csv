@@ -1,2 +1,4 @@
+#script,tags,depends,testcases
+SystemModule/SystemModule.s.csv,,,Create New User
 #script,url,tags,depends,prerequisites,timeout_minutes,testcases
-CatalogModule/ReviewInfoModule/ReviewInfo.s.csv,,"ReviewInfo.s.csv,,Catalog.dd.csv",ProductsModule/Products.s.csv,,,
+MarketingModule/SubMarketingModule/Marketing.s.csv,,"Marketing.s.csv,Marketing.dd.csv",,,,
