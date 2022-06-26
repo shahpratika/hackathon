@@ -86,7 +86,7 @@ function FillSortOrder($NoOfSortOrder){
 }
 
 function IsItemAlreadyPresent($Name){
-	if(_isVisible(_cell($Element))){
+	if(_isVisible(_cell($Name))){
 		_log($Name + "is already present.");
 		return true;
 	}
