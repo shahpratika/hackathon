@@ -1,1 +1,3 @@
-#script,url,tags,depends,prerequisites,timeout_minutes
+"#script","url","tags","depends","prerequisites","timeout_minutes"
+"CouponsModule/Coupons.s.csv"
+"SubMarketingModule/Marketing.s.csv"

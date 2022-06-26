@@ -2,6 +2,7 @@ _include("../CatalogLib.sah");
 
 
 function AddFilters($Name, $Type, $NoOfSortOrder, $Values){
+	if(IsItemAlreadyPresent($Name)) return;
 	_setValue(_textbox("Filter Group Name"), $Name);
 	FillSortOrder($NoOfSortOrder);
 	AddSubSections($Values);

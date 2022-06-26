@@ -85,6 +85,14 @@ function FillSortOrder($NoOfSortOrder){
 	}
 }
 
+function IsItemAlreadyPresent($Name){
+	if(_isVisible(_cell($Element))){
+		_log($Name + "is already present.");
+		return true;
+	}
+	return false;
+}
+
 function VerifyItemAdded($Name){
 //	 var $filterArray = _extract(_getText(_div("/Showing/")), "/\\((.*) Pages/");
 //	var $NoOfPages = $filterArray[$filterArray.length-1];

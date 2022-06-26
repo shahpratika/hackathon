@@ -31,30 +31,3 @@ function CreateCoupon($Name, $Code,$Type, $Discount, $Total ,$date_start,$date_e
 	//_click(_link("Logout"));
 }
 }
-/**
-* LogOut
-*/
-function LogOut() {
-	_click(_link("Logout"));
-}
-/**
-* AddMarketing
-* @param $Name - 
-* @param $Description - 
-*/
-function AddMarketing($Name, $Description,$code,$Example1,$Example2) {
-	_click(_link("Marketing"));
-	_click(_link("/Marketing/",_under(_link("Marketing"))));
-	if(_isVisible(_cell($Name))){
-	_log("Campaign Name already there");
-	}
-	else{
-	_click(_link("btn btn-primary"));
-	_setValue(_textbox("name"), $Name);
-	_setValue(_textarea("description"), $Description);
-	_setValue(_textbox("code"), $code);
-	_setValue(_textbox("input-example1"), $Example1);
-	_setValue(_textbox("input-example2"), $Example2);
-	_click(_submit("btn btn-primary"));
-	}
-}
