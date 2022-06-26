@@ -5,20 +5,21 @@
 ,,"loadSahi","../AdminLib.sah"
 
 "Admin Login",,"[Documentation]"
-,"[../../AdminData.csv:AdminData]","Navigate To Admin","Admin URL:http://support/opencart/"
-,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
+,"[../AdminData.csv:AdminData]","Navigate To Admin","Admin URL:http://support/opencart/"
+,"[../AdminData.csv:AdminData]","Admin Login","UserName:","Password:"
 
 "View Reports",,"[Documentation]"
 ,,"ViewReports"
 ,"[ReportsData.csv:ReportsInfo]","VerifyReports","Name:srushti A","ProductName:""iPhone""","StartDate:""24/06/2022"""
 ,,"Log Out"
 
-"TC_02",,"[Documentation]","Testcase Description"
-,"[../../UserModule/UserData.csv:UserData]","Navigate To User","User URL:"
+"View Online Report",,"[Documentation]","Online Reporte Description"
+
 ,"[ReportsData.csv:ReportOnline]","[Repeat]"
+,"[../../UserModule/UserData.csv:UserData]","Navigate To User","User URL:"
 ,,"Search Product","ProductName:iphone"
-,"[../../AdminData.csv:AdminData]","Navigate To Admin","Admin URL:http://support/opencart/"
-,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
+,"[../AdminData.csv:AdminData]","Navigate To Admin","Admin URL:http://support/opencart/"
+,"[../AdminData.csv:AdminData]","Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 ,,"ViewOnlineReport"
 ,,"VerifyOnline","ProductName:iphone"
 ,,"[End]"

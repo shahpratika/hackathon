@@ -1,8 +1,8 @@
 _include("../../../UserModule/UserLib.sah");
 _include("../../AdminLib.sah");
-_include("hackathon/UserModule/UserLib.sah");
-_include("hackathon/AdminModule/AdminLib.sah");
 
+$AdminURL = "http://192.168.0.103/opencart/upload/admin/";
+$URL = "http://192.168.0.103/opencart/upload";
 /**
 * AddInformation
 * @param $InformationTitle - 
@@ -35,13 +35,13 @@ function AddInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrde
 */
 function VerifyInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrder, $Keyword) {
 	var $Information= _collectAttributes("_cell","/.*/","sahiText",_under(_cell("Information Title")))
-	_navigateTo("/opencart/");
+	_navigateTo($URL);
 	for(var $i=0; $i<$Information.length ; $i++){
 		if(_isVisible(_link($Information[$i]))){
 			_log("info is there");
 		}
 		else{
-			_navigateTo("/opencart/admin/");
+			_navigateTo($AdminURL);
 			AdminLogin("admin", "opencart");
 			AddInformation($InformationTitle,$Description, $MetaTagTitle, $SortOrder, $Keyword);
 
@@ -54,7 +54,7 @@ function VerifyInformation($InformationTitle,$Description, $MetaTagTitle, $SortO
 * @param $Password - 
 */
 function UserLogin($EMailAddress, $Password) {
-	_navigateTo("/opencart/");
+	
 	_click(_link("My Account"));
 	_click(_link("Login"));
 	_setValue(_textbox("E-Mail Address"), $EMailAddress);
@@ -69,7 +69,7 @@ function UserLogin($EMailAddress, $Password) {
 * @param $Text1 - 
 */
 function CreateReview($Name, $Text,$Product,$Rating) {
-	_navigateTo("/opencart/admin/");
+	_navigateTo($AdminURL);
 	AdminLogin("admin","LhwMDQZBGxo=");
 	_click(_link("Catalog"));
 	_click(_link("Reviews"));
@@ -78,6 +78,7 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 		_log("reviews are already there");
 	}
 	else{
+		_navigateTo($URL, true);
 		UserLogin("srushtidhadawai@gmail.com","cF5aV1A=");
 		_click(_link($Product));
 		_click(_link("/Reviews/"));
@@ -88,7 +89,7 @@ function CreateReview($Name, $Text,$Product,$Rating) {
 		_assertVisible(_div("/Thank you for your review/"));
 		_click(_button("Continue"));
 		UserLogout();
-		_navigateTo("/opencart/admin/");
+		_navigateTo($AdminURL);
 		AdminLogin("admin","LhwMDQZBGxo=");
 		VerifyReview($Name,$Product);
 	}
@@ -123,7 +124,7 @@ function VerifyReviewInUser($Product,$Name) {
  * Delete Reviews()
  */
 function DeleteReviews($Product){
-	_navigateTo("/opencart/admin/");
+	_navigateTo($AdminURL);
 	AdminLogin("admin","LhwMDQZBGxo=");
 	_click(_link("Catalog"));
 	_click(_link("Reviews"));

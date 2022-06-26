@@ -1,11 +1,11 @@
 "TestCase","Data","Key Word","Argument 1","Argument 2"
 ,,"loadSahi","ReviewInfoLib.sah"
-,,"loadSahi","../../../UserModule/UserLib.sah"
 ,,"loadSahi","../../AdminLib.sah"
+
 
 "Admin Login",,"[Documentation]","Doing Admin Login to manage categories"
 ,"[../../AdminData.csv:AdminData]","Navigate To Admin","AdminURL:"
-,,"Admin Login","UserName:admin","Password:LhwMDQZBGxo="
+,"[../../AdminData.csv:AdminData]","Admin Login","UserName:admin","Password:LhwMDQZBGxo="
 
 "Add Information",,"[Documentation]"
 ,"[ReviewInfoData.csv:Information]","[Repeat]"
