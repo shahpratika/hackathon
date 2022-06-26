@@ -1,0 +1,13 @@
+"RegisterUser","Firstname","Lastname","Email","Telephone","Password","Confirm","Message"
+,"John","Cena","youcantseeme@gmail.com","1111111111","NQkaFxZBAQdQJQA=","NQkaFxZBAQdQJQA=","Your Account Has Been Created!"
+,"Mickey","Mouse","mickey.mous@gmail.com","1111111111","NQkaFxZBAQdQJQA=","NQkaFxZBAQdQJQA=","Your Account Has Been Created!"
+
+"VerifyTax","Country","State","PostCode","Currency","TaxType"
+"//","United Kingdom","Bristol","387001","/Euro/","VAT"
+,"India","Karnataka","387001","/Indian Rupees/","GST"
+
+"UserData","URL","User URL"
+,"http://localhost.sahitest.com/opencart/","http://localhost.sahitest.com/opencart/"
+
+"Checkout","Checkout As","Lastname","Address1","Address2","City","Country Id1","Zone Id1","PostCode","Email1","Telephone","Username","Password1","Confirm"
+,"Guest Checkout","Test","Address1","Address2","Nadiad","India","Karnataka","387001","test","1111111111","shah.pratik123@gmail.com","NQkaFxZBAQdQJQA=","NQkaFxZBAQdQJQA="

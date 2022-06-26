@@ -1,0 +1,174 @@
+function GoToUserPage($URL){
+	_navigateTo($URL);
+}
+
+/**
+* GoToRegister
+*/
+function GoToRegister() {
+	_windowAction("maximize");
+	_click(_span("My Account"));
+	_click(_link("Register"));
+}
+/**
+* AddPersonalDetails
+* @param $Firstname - 
+* @param $Lastname - 
+* @param $Email - 
+* @param $Telephone - 
+* @param $Password - 
+* @param $Confirm - 
+*/
+function AddPersonalDetails($Firstname, $Lastname, $Email, $Telephone, $Password, $Confirm) {
+	_setValue(_textbox("firstname"), $Firstname);
+	_setValue(_textbox("lastname"), $Lastname);
+	_setValue(_emailbox("email"), $Email);
+	_setValue(_telephonebox("telephone"), $Telephone);
+	_setPassword(_password("password"), $Password);
+	_setPassword(_password("confirm"), $Confirm);
+	_check(_radio("newsletter[1]"));
+	_check(_checkbox("agree"));
+	_click(_submit("Continue"));
+}
+/**
+* VerifySuccessMessage
+* @param $Message - 
+*/
+function VerifySuccessMessage($Message) {
+	_assertVisible(_heading1(0));
+	_assertEqual($Message, _getText(_heading1(0)));
+}
+
+function UserLogout(){
+	_click(_span("My Account"));
+	_click(_link("Logout"));
+	_assertVisible(_heading1("Account Logout"));
+}
+/**
+* SearchProduct
+* @param $ProductName - 
+*/
+function SearchProduct($ProductName) {
+	VerifyCart();
+	_setValue(_textbox("search"), $ProductName);
+	_click(_italic("fa fa-search"));
+	_click(_button("grid-view"));
+}
+/**
+* AddToCart
+*/
+function AddToCart() {
+	var $CartButtons = _collect("_button","/Add to Cart/");
+	_click($CartButtons[_random($CartButtons.length-1)])
+}
+/**
+* ViewCart
+*/
+function ViewCart() {
+	_click(_span("cart-total"));
+	_click(_link("View Cart"));
+}
+
+/**
+* VerifyTax
+* @param $Country - 
+* @param $State - 
+* @param $PostCode - 
+* @param $Currency - 
+* @param $TaxType - 
+*/
+function VerifyTax($Country, $State, $PostCode, $Currency, $TaxType) {
+	_click(_submit("/Currency/"));
+	_click(_button($Currency));
+	_click(_link("Estimate Shipping & Taxes"));
+	_wait(90000, _isVisible(_select("country_id")));
+	_setSelected(_select("country_id"), $Country);
+	_wait(90000, _isVisible(_select("zone_id")));
+	_setSelected(_select("zone_id"), $State);
+	_setValue(_textbox("postcode"), $PostCode);
+	_click(_button("Get Quotes"));
+	_click(_radio("shipping_method"));
+	_click(_button("Apply Shipping"));
+	_setStrictVisibilityCheck(true);
+	_assertVisible(_strong("/"+$TaxType+"/"));
+	_setStrictVisibilityCheck(false);
+}
+/**
+* Checkout
+* @param $CheckoutAs - G,RA, RC
+G - Guest
+RA - Register Account
+RC - Recurring Customer
+* @param $Firstname - 
+* @param $Lastname - 
+* @param $Address1 - 
+* @param $Address2 - 
+* @param $City - 
+* @param $CountryId1 - 
+* @param $ZoneId1 - 
+* @param $Email1 - 
+* @param $Telephone - 
+* @param $Password1 - 
+* @param $Confirm - 
+*/
+function Checkout($CheckoutAs, $Firstname, $Lastname, $Address1, $Address2, $City, $CountryId1, $ZoneId1, $PostCode,$Email1, $Telephone, $Username,$Password1, $Confirm) {
+	_setStrictVisibilityCheck(true);
+	_setSpeed(1000);
+	_click(_link("Checkout", _in(_div("Checkout"))));
+	_check(_radio($CheckoutAs));
+	_click(_button("Continue"));
+	_setValue(_textbox("firstname"), $Firstname);
+	_setValue(_textbox("lastname"), $Lastname);
+	var $email = $Email1+new Date().getTime()+"@gmail.com";
+	_setValue(_textbox("email"), $email);
+	_setValue(_textbox("address_1"), $Address1);
+	_setValue(_textbox("address_2"), $Address2);
+	_setValue(_textbox("telephone"), $Telephone);
+	_setValue(_textbox("city"), $City);
+	_setValue(_textbox("postcode"), $PostCode);
+	_setSelected(_select("country_id"), $CountryId1);
+	_setSelected(_select("zone_id"), $ZoneId1);
+	_setStrictVisibilityCheck(true);
+	_click(_button("Continue"));
+	_click(_button("Continue"));
+	_click(_checkbox("agree"));
+	_click(_button("Continue"));
+	_click(_button("Confirm Order"));
+	_click(_button("Confirm Order"));
+	_assertVisible(_heading1("Your order has been placed!"));
+	_assertEqual("Your order has been placed!", _getText(_heading1("Your order has been placed!")));
+	_setStrictVisibilityCheck(false);
+	_setSpeed(100);
+}
+
+
+function NavigateToUser($UserURL){
+	_navigateTo($UserURL);
+
+}
+
+
+function ApplyCouponCode($Code){
+	_click(_link("Use Coupon Code"));
+	_setValue(_textbox("coupon"), $Code);
+	_click(_button("Apply Coupon"));
+	_assertVisible(_div("/Success: Your coupon discount has been applied!/"));
+}
+
+function UserLogin($Username, $Password){
+	_click(_link("My Account"));
+	_click(_link("Login"));
+	_setValue(_textbox("email"), $Username);
+	_setPassword(_password("password"), $Password);
+	_click(_submit("Login"));
+	_assertVisible(_heading2("My Account"));
+
+}
+function VerifyCart() {
+	_click(_button("/inverse/"));
+	var $EmptyCart=_isVisible(_paragraph("Your shopping cart is empty!"));
+	if(!$EmptyCart) {
+		_click(_button("/danger/"));	
+	}
+}
+
